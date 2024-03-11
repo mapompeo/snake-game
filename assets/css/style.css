@@ -20,4 +20,6 @@ canvas {
     right: 0;
     background-color: rgb(77, 77, 77);
     border-radius: 10px;
+    background-color: #9FEF60;
+    border: solid #1630029d 4px;
 }
