@@ -15,6 +15,21 @@ class Head extends Obj {
     }
 
     refreshHead() {
+        switch (direction){
+            case ('left'):
+                this.x -= 30
+                break
+            case ('right'):
+                this.x += 30
+                break
+            case ('up'):
+                this.y -= 30
+                break
+            case ('down'):
+                this.y += 30
+                break
+        }
+
         if (this.x <= 0) {
                 this.x = 0
             }
