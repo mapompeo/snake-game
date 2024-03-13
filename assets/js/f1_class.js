@@ -45,9 +45,18 @@ class Head extends Obj {
             }
         }
 
-        colision() {
-
+    colision(reference) {
+        if((this.x < reference.x + reference.w) && 
+        (this.x + this.w > reference.x) && 
+        (this.y < reference.y + reference.h) &&
+        (this.y + this.h> reference.y)
+        ){
+            return true
         }
+        else{
+            return false
+        }
+    }
 }
 
 class Body extends Obj{
@@ -66,21 +75,28 @@ class Apple extends Obj{
         des.fillStyle = this.a
         des.fillRect(this.x, this.y, this.w, this.h)
     }
+
     respawnApple(){
+        // Algoritmo para arredondar os valores aleatórios em valores divisíveis por 30
+        let numeroAleatorio = null
+        do {
+            numeroAleatorio = Math.floor(Math.random() * ((990 - 30 + 1) + 30));
+        } 
+        while (numeroAleatorio % 30 !== 0);
+        this.x = numeroAleatorio
 
-    let numeroAleatorio = null
-    do {
-        numeroAleatorio = Math.floor(Math.random() * ((990 - 30 + 1) + 30));
-    } 
-    while (numeroAleatorio % 30 !== 0);
-    this.x = numeroAleatorio
 
+        do {
+            numeroAleatorio = Math.floor(Math.random() * ((600 - 30 + 1) + 30));
+        } 
+        while (numeroAleatorio % 30 !== 0);
+        this.y = numeroAleatorio
 
-    do {
-        numeroAleatorio = Math.floor(Math.random() * ((600 - 30 + 1) + 30));
-    } 
-    while (numeroAleatorio % 30 !== 0);
-    this.y = numeroAleatorio
+    }
+}
+
+class Text{
+    drawText(){
 
     }
 }
