@@ -4,10 +4,8 @@
   
 </div>
 
+<a href="https://www.youtube.com" onclick="window.open(this.href, '_blank'); return false;">Assista a vídeos no YouTube</a>
 
-<div align="center">
-<a href="https://jkm-snake.netlify.app/" target="_blank"><img src="" height="auto" width="auto"></a>
-</div>
 
 
 <div align="justify">
