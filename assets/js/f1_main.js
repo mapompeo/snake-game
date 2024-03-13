@@ -29,7 +29,7 @@ function refresh(){
 }
 
 function main(){
-    des.clearRect(0,0,1000,600)
+    des.clearRect(0,0,990,600)
     draw()
     refresh()  
 }
