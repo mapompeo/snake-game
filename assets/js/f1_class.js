@@ -43,7 +43,7 @@ class Head extends Obj {
         else if (this.y >= 600 - this.h) {
                 this.y = 600 - this.h
             }
-        }
+    }
 
     colision(reference) {
         if((this.x < reference.x + reference.w) && 
@@ -80,14 +80,14 @@ class Apple extends Obj{
         // Algoritmo para arredondar os valores aleatórios em valores divisíveis por 30
         let numeroAleatorio = null
         do {
-            numeroAleatorio = Math.floor(Math.random() * ((990 - 30 + 1) + 30));
+            numeroAleatorio = Math.floor(Math.random() * (((990 - this.w) - 30 + 1) + 30));
         } 
         while (numeroAleatorio % 30 !== 0);
         this.x = numeroAleatorio
 
 
         do {
-            numeroAleatorio = Math.floor(Math.random() * ((600 - 30 + 1) + 30));
+            numeroAleatorio = Math.floor(Math.random() * (((600 - this.h) - 30 + 1) + 30));
         } 
         while (numeroAleatorio % 30 !== 0);
         this.y = numeroAleatorio

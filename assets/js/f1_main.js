@@ -2,6 +2,7 @@ let des = document.getElementById('des').getContext('2d')
 let snake = new Head(0,0,30,30,'green')
 let direction = null
 let apple = new Apple(600,300,30,30,'red')
+let points = 0
 
 document.addEventListener('keydown', (click) => {
     if (click.key === 'a' || click.key === 'ArrowLeft') {
@@ -20,7 +21,9 @@ document.addEventListener('keydown', (click) => {
 
 function checkColision(){
     if(snake.colision(apple)){
-        console.log('foi')
+        points++
+        console.log(`Pontuação atual: ${points}`)
+        apple.respawnApple()
     }
 }
 
@@ -40,4 +43,5 @@ function main(){
     refresh()  
 }
 
+apple.respawnApple()
 setInterval(main,120)
