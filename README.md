@@ -1,11 +1,10 @@
 <div align="center">
   
 # Jornada da Kobra Mística - JKM Snake Game
-  
+
+<a href="https://jkm-snake.netlify.app/"><img src="" height="auto" width="auto"></a>
+
 </div>
-
-<a href="https://www.youtube.com" onclick="window.open(this.href, '_blank'); return false;">Assista a vídeos no YouTube</a>
-
 
 
 <div align="justify">
