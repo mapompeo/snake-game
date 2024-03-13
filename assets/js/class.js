@@ -1,5 +1,5 @@
 class Obj{
-    constructor(x,y,w,h,a){
+    constructor(x, y, w, h, a){
         this.x = x
         this.y = y
         this.w = w
@@ -9,9 +9,9 @@ class Obj{
 }
 
 class Head extends Obj {
-    drawHead(){
+    drawHead() {
         des.beginPath()
-        des.fillRect(this.x,this.y,this.w,this.h)
+        des.fillRect(this.x, this.y, this.w, this.h)
     }
 
     refreshHead() {
