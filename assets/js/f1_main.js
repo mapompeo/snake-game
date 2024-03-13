@@ -3,6 +3,9 @@ let snake = new Head(0,0,30,30,'green')
 let direction = null
 let apple = new Apple(600,300,30,30,'red')
 let points = 0
+let snakePoints = document.getElementById('snakePoints')
+
+snakePoints.innerHTML = `PONTOS: ${points}`
 
 document.addEventListener('keydown', (click) => {
     if (click.key === 'a' || click.key === 'ArrowLeft') {
@@ -22,7 +25,7 @@ document.addEventListener('keydown', (click) => {
 function checkColision(){
     if(snake.colision(apple)){
         points++
-        console.log(`Pontuação atual: ${points}`)
+        snakePoints.innerHTML = `PONTOS: ${points}`
         apple.respawnApple()
     }
 }

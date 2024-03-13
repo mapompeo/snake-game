@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +12,7 @@ body {
     align-items: center;
     text-align: center;
     overflow: hidden;
+    font-family: 'Montserrat';
 }
 
 canvas {
@@ -20,6 +23,25 @@ canvas {
     left: 0;
     right: 0;
     background-color: #9FEF60;
-    border: solid #1630029d 4px;
+    border: solid #4BAD00 4px;
     border-radius: 8px;
+}
+
+#snakePoints {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding: 5px 20px;
+    background-color: #9FEF60;
+    border: solid #4BAD00 4px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.divcontainer{
+    width: 990px;
+    height: 600px;
+    border: solid red 1px;
 }

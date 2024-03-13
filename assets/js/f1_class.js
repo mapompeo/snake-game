@@ -96,7 +96,10 @@ class Apple extends Obj{
 }
 
 class Text{
-    drawText(){
-
+    drawText(text, x, y, color, font){
+        des.fillStyle = color
+        des.lineWidth = '5'
+        des.font = font
+        des.fillText(text, x, y)
     }
 }
