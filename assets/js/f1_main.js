@@ -2,9 +2,12 @@ let des = document.getElementById('des').getContext('2d')
 let snake = new Head(0,0,30,30,'green')
 let direction = null
 let apple = new Apple(600,300,30,30,'red')
+let points = 0
+let snakePoints = document.getElementById('snakePoints')
+
+snakePoints.innerHTML = `PONTOS: ${points}`
 
 document.addEventListener('keydown', (click) => {
-    console.log(click.key)
     if (click.key === 'a' || click.key === 'ArrowLeft') {
         direction = 'left'
     }
@@ -19,6 +22,14 @@ document.addEventListener('keydown', (click) => {
     }
 })
 
+function checkColision(){
+    if(snake.colision(apple)){
+        points++
+        snakePoints.innerHTML = `PONTOS: ${points}`
+        apple.respawnApple()
+    }
+}
+
 function draw(){
     snake.drawHead()
     apple.drawApple()
@@ -26,12 +37,14 @@ function draw(){
 
 function refresh(){
     snake.refreshHead()
+    checkColision()
 }
 
 function main(){
-    des.clearRect(0,0,1000,600)
+    des.clearRect(0,0,990,600)
     draw()
     refresh()  
 }
 
+apple.respawnApple()
 setInterval(main,120)

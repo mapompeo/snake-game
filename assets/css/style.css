@@ -14,7 +14,6 @@
     --fontSize-Tittle: 36px;
 
     --border-radius: 24px;
-
 }
 
 * {
@@ -28,13 +27,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     overflow: hidden;
     font-size: var(--fontSize-Normal);
 }
 
 canvas {
-    margin: auto;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -43,4 +40,32 @@ canvas {
     background-color: var(--lightGreen);
     border: var(--defaultBorder);
     border-radius: 8px;
+    opacity: 1;
+    margin-top: -35px;
+}
+
+#snakePoints, #gameTime {
+    background-color: #9FEF60;
+    border: solid #4BAD00 4px;
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+    margin-left: 200px;
+    font-size: 20px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    color: var(--dark);
+    font-weight: 700;
+    padding: 20px;
+    padding-top: 10px;
+}
+
+.hud {
+    display: flex;
+    flex-direction: row;
+}
+
+.divContainer {
+    width: 990px;
+    height: 600px;
 }

@@ -1,4 +1,4 @@
-class Obj{
+class Obj {
     constructor(x, y, w, h, a){
         this.x = x
         this.y = y
@@ -10,12 +10,12 @@ class Obj{
 
 class Head extends Obj {
     drawHead() {
-        des.beginPath()
+        des.fillStyle = this.a
         des.fillRect(this.x, this.y, this.w, this.h)
     }
 
     refreshHead() {
-        switch (direction){
+        switch (direction) {
             case ('left'):
                 this.x -= 30
                 break
@@ -33,24 +33,33 @@ class Head extends Obj {
         if (this.x <= 0) {
                 this.x = 0
             }
-        else if (this.x >= 1000 - this.w) {
-                this.x = 1000 - this.w
+        else if (this.x >= 990 - this.w) {
+                this.x = 990 - this.w
             }
-            
+
         if (this.y <= 0) {
                 this.y = 0
             }
-        else if (this.y >= 600 - this.w) {
-                this.y = 600 - this.w
+        else if (this.y >= 600 - this.h) {
+                this.y = 600 - this.h
             }
-        }
+    }
 
-        colision() {
-
+    colision(reference) {
+        if ((this.x < reference.x + reference.w) && 
+        (this.x + this.w > reference.x) && 
+        (this.y < reference.y + reference.h) &&
+        (this.y + this.h> reference.y)
+        ){
+            return true
         }
+        else{
+            return false
+        }
+    }
 }
 
-class Body extends Obj{
+class Body extends Obj {
     drawBody(){
         des.fillStyle = this.a
         des.fillRect(this.x, this.y, this.w, this.h)
@@ -66,8 +75,29 @@ class Apple extends Obj{
         des.fillStyle = this.a
         des.fillRect(this.x, this.y, this.w, this.h)
     }
+
     respawnApple(){
-        this.x = Math.floor(Math.random() * ((1000 - 2 + 1) + 2))
-        this.y = Math.floor(Math.random() * ((600 - 2 + 1) + 2))
+        // Algoritmo para arredondar os valores aleatórios em valores divisíveis por 30
+        let numeroAleatorio = null
+        do {
+            numeroAleatorio = Math.floor(Math.random() * (((990 - this.w) - 30 + 1) + 30));
+        } 
+        while (numeroAleatorio % 30 !== 0);
+        this.x = numeroAleatorio
+
+        do {
+            numeroAleatorio = Math.floor(Math.random() * (((600 - this.h) - 30 + 1) + 30));
+        } 
+        while (numeroAleatorio % 30 !== 0);
+        this.y = numeroAleatorio
+    }
+}
+
+class Text{
+    drawText(text, x, y, color, font){
+        des.fillStyle = color
+        des.lineWidth = '5'
+        des.font = font
+        des.fillText(text, x, y)
     }
 }
