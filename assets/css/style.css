@@ -102,7 +102,7 @@ canvas {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: auto;
+    height: 434px;
     width: 360px;
     background-color: var(--backgroundCard);
     border-radius: var(--border-radius-Big);
@@ -164,3 +164,28 @@ canvas {
 }
 
 /* END CARD MENU */
+
+
+/* MENU PLAY AGAIN */
+
+.time:hover, .points:hover {
+    cursor: default;
+    transform: scale(1.0);
+    background-color: var(--lightGreen);
+}
+
+.playAgainButton {
+    height: auto;
+}
+
+.buttonClose {
+    transition: all 0.2s;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonClose:hover {
+    transition: all 0.2s;
+    cursor: pointer;
+    transform: scale(1.1);
+}

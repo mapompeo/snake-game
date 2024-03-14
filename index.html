@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- <div class="cardMaster start">
-        <a href="index.html" class="logoContainer"><img class="logo"  src="assets/images/Logo.png" alt="Logo do jogo - Jornada da Kobra Mística"></a>
+        <a href="index.html" class="logoContainer"><img class="logo"  src="assets/images/menu/jkm-logo.svg" alt="Logo do jogo - Jornada da Kobra Mística"></a>
         <div class="start card">
             <div class="cardButtons">
                 <button class="button" onclick="play()">JOGAR</button>
@@ -22,13 +22,14 @@
             <p class="text-copyright">Copyright © 2024 JKM Snake Game.<br>Todos os direitos reservados.</p>
         </div>
     </div> -->
-    <div class="cardMaster">
-        <a href="index.html" class="logoCard"><img  src="assets/images/Logo.png" alt="Logo do jogo - Jornada da Kobra Mística"></a>
+    <div class="cardMaster playAgain">
+        <a href="index.html" class="logoContainer"><img class="logo"  src="assets/images/menu/jkm-logo.svg" alt="Logo do jogo - Jornada da Kobra Mística"></a>
         <div class="start card">
+            <button onclick="showStart()" class="buttonClose"><img src="./assets/images/menu/button-close.svg" alt="Botão para fechar"></button>
             <div class="cardButtons">
-                <button class="button" onclick="play()">JOGAR</button>
-                <button class="button" onclick="definitions()">DEFINIÇÕES</button>
-                <button class="button" onclick="credits()">CRÉDITOS</button>
+                <div class="button time"></div>
+                <div class="button points"></div>
+                <button class="button playAgainButton" onclick="play()">JOGAR NOVAMENTE</button>
             </div>
             <p class="text-copyright">Copyright © 2024 JKM Snake Game.<br>Todos os direitos reservados.</p>
         </div>
