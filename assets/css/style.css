@@ -55,12 +55,12 @@ canvas {
     padding-top: 10px;
 }
 
-.hud {
+.hud{
     display: flex;
     flex-direction: row;
 }
 
-.divContainer {
+.divContainer{
     width: 990px;
     height: 600px;
 }

@@ -31,9 +31,9 @@ class Head extends Obj {
         }
 
         if (this.x < 0 || 
-            this.x > 990 - this.w || 
+            this.x > 810 - this.w || 
             this.y < 0 || 
-            this.y > 600 - this.h) {
+            this.y > 510 - this.h) {
                 snakeAlive = false
             }
 
@@ -42,15 +42,15 @@ class Head extends Obj {
         // if (this.x <= 0) {
         //         this.x = 0
         //     }
-        // else if (this.x >= 990 - this.w) {
-        //         this.x = 990 - this.w
+        // else if (this.x >= 800 - this.w) {
+        //         this.x = 800 - this.w
         //     }
 
         // if (this.y <= 0) {
         //         this.y = 0
         //     }
-        // else if (this.y >= 600 - this.h) {
-        //         this.y = 600 - this.h
+        // else if (this.y >= 510 - this.h) {
+        //         this.y = 510 - this.h
         //     }
     }
 
@@ -74,6 +74,7 @@ class Head extends Obj {
         direction = ''
         apple.respawnApple()
         snakePoints.innerHTML = `PONTOS: ${points}`
+        snakeTail = []
     }
 }
 
@@ -98,13 +99,13 @@ class Apple extends Obj{
         // Algoritmo para arredondar os valores aleatórios em valores divisíveis por 30
         let numeroAleatorio = null
         do {
-            numeroAleatorio = Math.floor(Math.random() * (((990 - this.w) - 30 + 1) + 30));
+            numeroAleatorio = Math.floor(Math.random() * (((800 - this.w) - 30 + 1) + 30));
         } 
         while (numeroAleatorio % 30 !== 0);
         this.x = numeroAleatorio
 
         do {
-            numeroAleatorio = Math.floor(Math.random() * (((600 - this.h) - 30 + 1) + 30));
+            numeroAleatorio = Math.floor(Math.random() * (((500 - this.h) - 30 + 1) + 30));
         } 
         while (numeroAleatorio % 30 !== 0);
         this.y = numeroAleatorio
