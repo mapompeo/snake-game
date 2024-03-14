@@ -11,9 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- <div class="cardMaster start">
+<!-- realizar as funções dos eventos de click dos botões de todas os card menu -->
+
+    <!-- START -->
+    <!-- <div class="cardMaster">
         <a href="index.html" class="logoContainer"><img class="logo"  src="assets/images/menu/jkm-logo.svg" alt="Logo do jogo - Jornada da Kobra Mística"></a>
-        <div class="start card">
+        <div class="card">
             <div class="cardButtons">
                 <button class="button" onclick="play()">JOGAR</button>
                 <button class="button" onclick="definitions()">DEFINIÇÕES</button>
@@ -22,22 +25,45 @@
             <p class="text-copyright">Copyright © 2024 JKM Snake Game.<br>Todos os direitos reservados.</p>
         </div>
     </div> -->
-    <div class="cardMaster playAgain">
+
+    <!-- PLAY AGAIN -->
+    <!-- <div class="cardMaster">
         <a href="index.html" class="logoContainer"><img class="logo"  src="assets/images/menu/jkm-logo.svg" alt="Logo do jogo - Jornada da Kobra Mística"></a>
-        <div class="start card">
-            <button onclick="showStart()" class="buttonClose"><img src="./assets/images/menu/button-close.svg" alt="Botão para fechar"></button>
+        <button class="buttonClose" onclick="close()"><img src="assets/images/menu/button-close.svg" alt="Botão de fechar"></button>
+        <div class="card">
             <div class="cardButtons">
-                <div class="button time"></div>
-                <div class="button points"></div>
+                <button class="button result">PONTOS:</button>
+                <button class="button result">TEMPO: </button>
                 <button class="button playAgainButton" onclick="play()">JOGAR NOVAMENTE</button>
             </div>
-            <p class="text-copyright">Copyright © 2024 JKM Snake Game.<br>Todos os direitos reservados.</p>
         </div>
-    </div>
+    </div> -->
+
+    <!-- CREDITS -->
+    <!-- <div class="cardMaster">
+        <a href="index.html" class="logoContainer"><img class="logo" src="assets/images/menu/jkm-logo.svg" alt="Logo do jogo - Jornada da Kobra Mística"></a>
+        <button class="buttonClose" onclick="close()"><img src="assets/images/menu/button-close.svg" alt="Botão de fechar"></button>
+        <div class="credits card">
+            <h2 class="creditsH2">CRÉDITOS</h2>
+            <h3 class="creditsH3">Desenvolvido por:</h3>
+            <div class="developers">
+                <ul class="list-style-none">
+                    <li><a class="listElements" href="https://github.com/naasdd" target="_blank"><img class="developersImage" src="./assets/images/devs/jose-gabriel.jpg" alt="">José Gabriel<br>(@naasdd)</a></li>
+                    <li><a class="listElements" href="https://github.com/kauuaa" target="_blank"><img class="developersImage" src="./assets/images/devs/kaua-biasebetti.jpg" alt="">Kauã Biasebetti<br>(@kauuaa)</a></li>
+                    <li><a class="listElements" href="https://github.com/mapompeo" target="_blank"><img class="developersImage" src="./assets/images/devs/matheus-pompeo.jpg" alt="">Matheus Pompeo<br>(@mapompeo)</a></li>
+                </ul>
+            </div>
+            <div class="footer">
+                <a class="linkGithub" href="https://github.com/mapompeo/snake-game" target="_blank"><img class="github" src="assets/images/menu/github-icon.svg" alt="Ícone do GitHub"></a>
+                <p class="text-copyright-credits">Copyright © 2024 JKM Snake Game.<br>Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </div> -->
+
     <div class="screen">
         <div class="hud">
             <p id="snakePoints">PONTOS: 0</p>
-            <p id="gameTime">TEMPO: 03:45</p>
+            <p id="gameTime">TEMPO: 00:00</p>
         </div>
         <canvas id="des" width="810" height="510"></canvas>
     </div>

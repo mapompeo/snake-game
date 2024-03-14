@@ -62,8 +62,8 @@ body {
 }
 
 #snakePoints, #gameTime {
-    background-color: #9FEF60;
-    border: solid #4BAD00 4px;
+    background-color: var(--lightGreen);
+    border: var(--defaultBorder);
     border-radius: 24px 24px 0px 0px;
     text-align: center;
     display: flex;
@@ -74,7 +74,6 @@ body {
     height: 50px;
     font-weight: bold;
     margin: 0px 40px;
-
 }
 
 canvas {
@@ -109,7 +108,7 @@ canvas {
     border: var(--defaultBorder);
     backdrop-filter: blur(8.5px);
     -webkit-backdrop-filter: blur(8.5px);
-    
+    /* Position absolute para deixar os elementos sobrepostos e inseridos na tela em forma de porcentagem, assim eles ficaram iguais para todos os dispositivos */
     position: absolute;
     top: 10%;
     left: 50%;
@@ -137,7 +136,7 @@ canvas {
     margin-top: 90px;
 }
 
-.button {
+.button, .divButton {
     transition: all 0.2s;
     width: 280px;
     height: 70px;
@@ -157,7 +156,7 @@ canvas {
     transform: scale(1.01);
 }
 
-.text-copyright {
+.text-copyright, .text-copyright-credits {
     font-size: var(--fontSize-Little);
     font-weight: bold;
     margin: 24px 0px;
@@ -166,26 +165,129 @@ canvas {
 /* END CARD MENU */
 
 
+
 /* MENU PLAY AGAIN */
 
-.time:hover, .points:hover {
+.divButton {
+    width: 280px;
+    height: 70px;
+}
+
+.result:hover {
     cursor: default;
     transform: scale(1.0);
     background-color: var(--lightGreen);
 }
 
 .playAgainButton {
-    height: auto;
+    height: fit-content;
+    height: 116px;
+    margin-bottom: 40px;
 }
 
 .buttonClose {
+    z-index: 3;
     transition: all 0.2s;
     border: none;
     background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(220%, -330%);
 }
 
 .buttonClose:hover {
-    transition: all 0.2s;
     cursor: pointer;
+}
+
+/* END MENU PLAY AGAIN */
+
+
+/* CREDITS */
+
+.credits {
+    display: flex;
+    justify-content: flex-end
+}
+
+.creditsH2 {
+    font-size: var(--fontSize-SubTittle);
+    
+    margin-bottom: 10px;
+}
+
+.creditsH3 {
+    font-size: var(--fontSize-Normal);
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.developers {
+    border: var(--defaultBorder);
+    background-color: var(--lightGreen);
+    border-radius: var(--border-radius-Little);
+    width: 272px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-style-none {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.listElements {
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px;
+    text-align: left;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.listElements:hover {
+    transition: all 0.2s;
+    transform: scale(1.02);
+}
+
+.developersImage {
+    height: auto;
+    width: 36px;
+    border: var(--defaultBorder);
+    border-radius: 99px;
+    margin-right: 8px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github {
+    transition: all 0.2s;
+    width: auto;
+    height: 36px;
+}
+
+.linkGithub {
+    transition: all 0.2s;
+}
+
+.linkGithub:hover {
+    transition: all 0.2s;
     transform: scale(1.1);
 }
+
+.text-copyright-credits {
+    margin-left: 18px;
+}
+
+/* END CREDITS */
