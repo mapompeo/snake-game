@@ -1,8 +1,9 @@
 let des = document.getElementById('des').getContext('2d')
-let snake = new Head(0,0,30,30,'green')
+let snake = new Head(60,60,30,30,'green')
 let direction = null
 let apple = new Apple(600,300,30,30,'red')
 let points = 0
+let snakeAlive = true
 let snakePoints = document.getElementById('snakePoints')
 
 snakePoints.innerHTML = `PONTOS: ${points}`
@@ -41,9 +42,20 @@ function refresh(){
 }
 
 function main(){
-    des.clearRect(0,0,990,600)
-    draw()
-    refresh()  
+    if(snakeAlive){
+        des.clearRect(0,0,990,600)
+        draw()
+        refresh()  
+
+    }
+    else{
+        if(window.confirm('Você morreu, quer tentar novamente?')){
+            snakeAlive = true
+            snake.restartSnake()
+        }else{
+
+        }
+    }
 }
 
 apple.respawnApple()
