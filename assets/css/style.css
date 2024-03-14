@@ -38,14 +38,13 @@ canvas {
     font-weight: 700;
     padding: 20px;
     padding-top: 10px;
-
 }
-
 
 .hud{
     display: flex;
     flex-direction: row;
 }
+
 .divContainer{
     width: 990px;
     height: 600px;
