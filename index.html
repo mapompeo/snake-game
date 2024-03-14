@@ -11,10 +11,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="divContainer">
+    <!-- <div class="cardMaster start">
+        <a href="index.html" class="logoContainer"><img class="logo"  src="assets/images/Logo.png" alt="Logo do jogo - Jornada da Kobra Mística"></a>
+        <div class="start card">
+            <div class="cardButtons">
+                <button class="button" onclick="play()">JOGAR</button>
+                <button class="button" onclick="definitions()">DEFINIÇÕES</button>
+                <button class="button" onclick="credits()">CRÉDITOS</button>
+            </div>
+            <p class="text-copyright">Copyright © 2024 JKM Snake Game.<br>Todos os direitos reservados.</p>
+        </div>
+    </div> -->
+    <div class="cardMaster">
+        <a href="index.html" class="logoCard"><img  src="assets/images/Logo.png" alt="Logo do jogo - Jornada da Kobra Mística"></a>
+        <div class="start card">
+            <div class="cardButtons">
+                <button class="button" onclick="play()">JOGAR</button>
+                <button class="button" onclick="definitions()">DEFINIÇÕES</button>
+                <button class="button" onclick="credits()">CRÉDITOS</button>
+            </div>
+            <p class="text-copyright">Copyright © 2024 JKM Snake Game.<br>Todos os direitos reservados.</p>
+        </div>
+    </div>
+    <div class="screen">
         <div class="hud">
-            <p id="snakePoints">Pontos: 0</p>
-            <p id="gameTime">Tempo: 00:00</p>
+            <p id="snakePoints">PONTOS: 0</p>
+            <p id="gameTime">TEMPO: 00:00</p>
         </div>
         <canvas id="des" width="810" height="510"></canvas>
     </div>

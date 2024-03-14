@@ -1,9 +1,12 @@
+/* GLOBAL */
+
 :root {
     /* Color */
-    --dark: #333333;
-    --lightGreen: #9FEF60;
-    --darkGreen: #4BAD00;
-
+    --dark: rgb(51, 51, 51);
+    --lightGreen: rgb(159, 239, 96);
+    --darkGreen: rgb(75, 173, 0);
+    --backgroundCard: rgba(255, 255, 255, 0.5);
+    
     /* Border */
     --defaultBorder: solid 4px var(--darkGreen);
 
@@ -13,22 +16,65 @@
     --fontSize-SubTittle: 24px;
     --fontSize-Tittle: 36px;
 
-    --border-radius: 24px;
+    --border-radius-Big: 24px;
+    --border-radius-Little: 16px;
 }
 
 * {
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
+    text-align: center;
 }
 
 body {
+    transition: all 0.2s;
     background-color: var(--dark);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     font-size: var(--fontSize-Normal);
+    color: var(--dark);
+}
+
+/* END GLOBAL */
+
+
+
+/* SCREEN */
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100vh;
+}
+
+.hud {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#snakePoints, #gameTime {
+    background-color: #9FEF60;
+    border: solid #4BAD00 4px;
+    border-radius: 24px 24px 0px 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fontSize-SubTittle);
+    width: 240px;
+    height: 50px;
+    font-weight: bold;
+    margin: 0px 40px;
+
 }
 
 canvas {
@@ -36,31 +82,85 @@ canvas {
     border: var(--defaultBorder);
     border-radius: 8px;
     opacity: 1;
-    margin-top: -35px;
 }
 
-#snakePoints, #gameTime {
-    background-color: #9FEF60;
-    border: solid #4BAD00 4px;
-    border-radius: var(--border-radius);
-    margin-top: 20px;
-    margin-left: 200px;
-    font-size: 20px;
-    width: 150px;
-    height: 40px;
-    text-align: center;
-    color: var(--dark);
-    font-weight: 700;
-    padding: 20px;
-    padding-top: 10px;
+/* END SCREEN */
+
+
+
+/* CARD MENU */
+
+.cardMaster {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.hud{
+.card {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    width: 360px;
+    background-color: var(--backgroundCard);
+    border-radius: var(--border-radius-Big);
+    border: var(--defaultBorder);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    z-index: 1;
 }
 
-.divContainer{
-    width: 990px;
-    height: 600px;
+.logoContainer {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -135%);
 }
+
+.logo {
+    transform: scale(0.7);
+}
+
+.cardButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 90px;
+}
+
+.button {
+    transition: all 0.2s;
+    width: 280px;
+    height: 70px;
+    background-color: var(--lightGreen);
+    font-weight: bold;
+    color: var(--dark);
+    margin: 10px 0px;
+    font-size: var(--fontSize-Tittle);
+    border: var(--defaultBorder);
+    border-radius: var(--border-radius-Little);
+}
+
+.button:hover {
+    transition: all 0.1s;
+    cursor: pointer;
+    background-color: transparent;
+    transform: scale(1.01);
+}
+
+.text-copyright {
+    font-size: var(--fontSize-Little);
+    font-weight: bold;
+    margin: 24px 0px;
+}
+
+/* END CARD MENU */
