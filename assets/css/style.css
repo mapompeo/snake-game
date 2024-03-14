@@ -203,6 +203,7 @@ canvas {
 /* END MENU PLAY AGAIN */
 
 
+
 /* CREDITS */
 
 .credits {
@@ -291,3 +292,31 @@ canvas {
 }
 
 /* END CREDITS */
+
+
+
+/* DEFINITIONS */
+
+.settings {
+
+}
+
+.settingsElements {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+
+.rangeText {
+    font-weight: bold;
+    font-size: var(--fontSize-SubTittle);
+    text-align: left;
+}
+
+.wasdArrows {
+    width: 260px;
+}
+
+/* END DEFINITIONS */
