@@ -54,8 +54,6 @@ function main(){
     refresh()  
 }
 
-// criar uma função para mostrar o card playAgain quando a cobra morre ou colide com alguma coisa
-
 
 // CARD FUNCTIONS
 
