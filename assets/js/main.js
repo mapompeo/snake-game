@@ -5,12 +5,13 @@ let des = document.getElementById('des').getContext('2d')
 let snake = new Head(60,60,30,30,'green')
 let snakeTail = []
 let snakeAlive = true
-let snakePoints = document.getElementById('snakePoints')
 
 // ITEMS
 let apple = new Apple(600,300,30,30,'red')
 let points = 0
 let snakePoints = document.getElementById('snakePoints')
+
+// CARDS
 let startMaster = document.getElementsByClassName('startMaster')
 let playAgainMaster = document.getElementsByClassName('playAgainMaster')
 let creditsMaster = document.getElementsByClassName('creditsMaster')
@@ -80,7 +81,6 @@ function play() {
                     seconds = 0
                     minutes++
                 }
-
                 // Linha para gerar o timer com dois caracteres
                 gameTime.innerText = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
             }, 1000)
@@ -88,22 +88,19 @@ function play() {
     }
 
     function checkColision(){
-        if(snake.colision(apple)){
+        if (snake.colision(apple)) {
             points++
             snakePoints.innerHTML = `PONTOS: ${points}`
             apple.respawnApple()
-
             // Ao colidir com a maçã, o algoritmo adiciona um objeto da classe body no array, contendo as mesmas propriedades da cabeça da cobra
             snakeTail.push(new Body(snake.x,snake.y,snake.w,snake.h,snake.a))
-            
         }
     }
 
     function draw(){
         snake.drawHead()
         apple.drawApple()
-        
-        // Aqui ele faz um loop lendo cada valor do array e desenhando individualmente
+        // Um loop lendo cada valor do array e desenhando individualmente
         for(i = snakeTail.length - 1 ; i >= 0; i--){
             snakeTail[i].drawBody()
             console.log(snakeTail)
@@ -112,14 +109,13 @@ function play() {
 
     function refresh(){
         snake.refreshHead()
-
         // Esse algoritmo serve para desenhar a cauda da cobra com base no elemento anterior
-        for(i = snakeTail.length -1 ; i >= 0; i--){
+        for (i = snakeTail.length -1 ; i >= 0; i--){
             console.log(i)
-            if(i === 0){
+            if (i === 0) {
                 snakeTail[i].x = posicaox
                 snakeTail[i].y = posicaoy
-            }else{
+            } else {
                 snakeTail[i].x = snakeTail[i-1].x
                 snakeTail[i].y = snakeTail[i-1].y
             }
@@ -129,27 +125,26 @@ function play() {
     }
 
     function main(){
-        if(snakeAlive){
+        if (snakeAlive) {
             des.clearRect(0, 0, 810, 510)
-
             posicaox = snake.x
             posicaoy = snake.y
-
             draw()
-            refresh()  
-
-        }
-        else{
+            refresh()
+        } else {
             seconds = -1
             minutes = 0
             if (window.confirm('Você morreu, quer tentar novamente?')){
                 snakeAlive = true
                 snake.restartSnake()
             } else {
-
             }
         }
     }
+    apple.respawnApple()
+    setInterval(main, 120)
+}
+
 
 
 // CARD FUNCTIONS
@@ -180,7 +175,3 @@ function closePlayAgain() {
 }
 
 // END CARD FUNCTIONS
-
-    apple.respawnApple()
-    setInterval(main, 120)
-}
