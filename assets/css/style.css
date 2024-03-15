@@ -297,8 +297,13 @@ canvas {
 
 /* DEFINITIONS */
 
-.settings {
+.definitions {
+    display: flex;
+    justify-content: flex-end;
+}
 
+.settings {
+    width: 280px;
 }
 
 .settingsElements {
@@ -308,15 +313,58 @@ canvas {
     margin-bottom: 16px;
 }
 
-
 .rangeText {
     font-weight: bold;
     font-size: var(--fontSize-SubTittle);
     text-align: left;
+    margin-bottom: 14px;
+}
+
+input[type='range'] {
+    cursor: pointer;
+}
+  
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type="range"] {
+    appearance: none;
+    height: 8px;
+    width: 272px;
+    border-radius: var(--border-radius-Big);
+    border: var(--defaultBorder);
+    background-color: var(--lightGreen);
+    cursor: pointer;
+    outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    box-sizing: border-box;
+    width: 29px;
+    height: 39px;
+    background-image: url(../images/apple.svg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wasdArrows {
     width: 260px;
+    margin: 24px 0px;
 }
 
 /* END DEFINITIONS */
+
+
+/* fazendo funcionar os cards */
+
+.startMaster, .playAgainMaster, .creditsMaster, .definitionsMaster {
+    display: none;
+}
+
+.startMaster {
+    display: block;
+}
