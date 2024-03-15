@@ -30,19 +30,28 @@ class Head extends Obj {
                 break
         }
 
-        if (this.x <= 0) {
-                this.x = 0
-            }
-        else if (this.x >= 990 - this.w) {
-                this.x = 990 - this.w
+        if (this.x < 0 || 
+            this.x > 810 - this.w || 
+            this.y < 0 || 
+            this.y > 510 - this.h) {
+                snakeAlive = false
             }
 
-        if (this.y <= 0) {
-                this.y = 0
-            }
-        else if (this.y >= 600 - this.h) {
-                this.y = 600 - this.h
-            }
+
+            // Algoritmo onde a cobra bate na parede e não morre
+        // if (this.x <= 0) {
+        //         this.x = 0
+        //     }
+        // else if (this.x >= 800 - this.w) {
+        //         this.x = 800 - this.w
+        //     }
+
+        // if (this.y <= 0) {
+        //         this.y = 0
+        //     }
+        // else if (this.y >= 510 - this.h) {
+        //         this.y = 510 - this.h
+        //     }
     }
 
     colision(reference) {
@@ -56,6 +65,16 @@ class Head extends Obj {
         else{
             return false
         }
+    }
+
+    restartSnake(){
+        this.x = 60
+        this.y = 60
+        points = 0
+        direction = ''
+        apple.respawnApple()
+        snakePoints.innerHTML = `PONTOS: ${points}`
+        snakeTail = []
     }
 }
 
@@ -80,13 +99,13 @@ class Apple extends Obj{
         // Algoritmo para arredondar os valores aleatórios em valores divisíveis por 30
         let numeroAleatorio = null
         do {
-            numeroAleatorio = Math.floor(Math.random() * (((990 - this.w) - 30 + 1) + 30));
+            numeroAleatorio = Math.floor(Math.random() * (((800 - this.w) - 30 + 1) + 30));
         } 
         while (numeroAleatorio % 30 !== 0);
         this.x = numeroAleatorio
 
         do {
-            numeroAleatorio = Math.floor(Math.random() * (((600 - this.h) - 30 + 1) + 30));
+            numeroAleatorio = Math.floor(Math.random() * (((500 - this.h) - 30 + 1) + 30));
         } 
         while (numeroAleatorio % 30 !== 0);
         this.y = numeroAleatorio
