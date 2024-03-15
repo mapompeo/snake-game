@@ -4,6 +4,14 @@ let direction = null
 let apple = new Apple(600,300,30,30,'red')
 let points = 0
 let snakePoints = document.getElementById('snakePoints')
+let startMaster = document.getElementsByClassName('startMaster')
+let playAgainMaster = document.getElementsByClassName('playAgainMaster')
+let creditsMaster = document.getElementsByClassName('creditsMaster')
+let definitionsMaster = document.getElementsByClassName('definitionsMaster')
+
+window.addEventListener("load", function() {
+    
+})
 
 snakePoints.innerHTML = `PONTOS: ${points}`
 
@@ -45,6 +53,36 @@ function main(){
     draw()
     refresh()  
 }
+
+
+// CARD FUNCTIONS
+
+function definitions() {
+    startMaster[0].style.display = "none";
+    definitionsMaster[0].style.display = "block";
+}
+
+function credits() {
+    startMaster[0].style.display = "none";
+    creditsMaster[0].style.display = "block";
+}
+
+function closeDefinitions() {
+    definitionsMaster[0].style.display = "none";
+    startMaster[0].style.display = "block";
+}
+
+function closeCredits() {
+    creditsMaster[0].style.display = "none";
+    startMaster[0].style.display = "block";
+}
+
+function closePlayAgain() {
+    playAgainMaster[0].style.display = "none";
+    startMaster[0].style.display = "block";
+}
+
+// END CARD FUNCTIONS
 
 apple.respawnApple()
 setInterval(main,120)
