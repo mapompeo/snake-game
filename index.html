@@ -27,7 +27,7 @@
     <!-- PLAY AGAIN -->
     <div class="cardMaster playAgainMaster">
         <a href="index.html" class="logoContainer"><img class="logo"  src="assets/images/menu/jkm-logo.svg" alt="Logo do jogo - Jornada da Kobra Mística"></a>
-        <button class="buttonClose" onclick="close()"><img src="assets/images/menu/button-close.svg" alt="Botão de fechar"></button>
+        <button class="buttonClose" onclick="closePlayAgain()"><img src="assets/images/menu/button-close.svg" alt="Botão de fechar"></button>
         <div class="card">
             <div class="cardButtons">
                 <button class="button result">PONTOS:</button>
@@ -40,7 +40,7 @@
     <!-- CREDITS -->
     <div class="cardMaster creditsMaster">
         <a href="index.html" class="logoContainer"><img class="logo" src="assets/images/menu/jkm-logo.svg" alt="Logo do jogo - Jornada da Kobra Mística"></a>
-        <button class="buttonClose" onclick="close()"><img src="assets/images/menu/button-close.svg" alt="Botão de fechar"></button>
+        <button class="buttonClose" onclick="closeCredits()"><img src="assets/images/menu/button-close.svg" alt="Botão de fechar"></button>
         <div class="credits card">
             <h2 class="creditsH2">CRÉDITOS</h2>
             <h3 class="creditsH3">Desenvolvido por:</h3>
@@ -61,7 +61,7 @@
     <!-- DEFINITIONS -->
     <div class="cardMaster definitionsMaster">
         <a href="index.html" class="logoContainer"><img class="logo" src="assets/images/menu/jkm-logo.svg" alt="Logo do jogo - Jornada da Kobra Mística"></a>
-        <button class="buttonClose" onclick="close()"><img src="assets/images/menu/button-close.svg" alt="Botão de fechar"></button>
+        <button class="buttonClose" onclick="closeDefinitions()"><img src="assets/images/menu/button-close.svg" alt="Botão de fechar"></button>
         <div class="definitions card">
             <div class="settings">
                 <div class="settingsElements">
@@ -85,7 +85,7 @@
         </div>
         <canvas id="des" width="810" height="510"></canvas>
     </div>
-    <script src="./assets/js/class.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/class.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
 </body>
 </html>

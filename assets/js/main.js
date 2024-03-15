@@ -54,7 +54,7 @@ function main(){
     refresh()  
 }
 
-
+// criar uma função para mostrar o card playAgain quando a cobra morre ou colide com alguma coisa
 
 
 // CARD FUNCTIONS
@@ -69,10 +69,19 @@ function credits() {
     creditsMaster[0].style.display = "block";
 }
 
-function close() {
-    startMaster[0].style.display = "block";
+function closeDefinitions() {
     definitionsMaster[0].style.display = "none";
+    startMaster[0].style.display = "block";
+}
+
+function closeCredits() {
     creditsMaster[0].style.display = "none";
+    startMaster[0].style.display = "block";
+}
+
+function closePlayAgain() {
+    playAgainMaster[0].style.display = "none";
+    startMaster[0].style.display = "block";
 }
 
 // END CARD FUNCTIONS
