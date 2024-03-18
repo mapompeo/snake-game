@@ -25,13 +25,12 @@ let seconds = 0, minutes = 0, counting = 0
 
 // MOVEMENT
 let direction = null
-let posicaox = null, posicaoy = null
+let positionX = null, positionY = null
 
 // START SCREEN
 let start = document.getElementsByClassName('start')
 
 // MUSIC
-
 let bitingAppleAudio = new Audio("assets/sounds/biting-apple.mp3")
 let loseAudio = new Audio("assets/sounds/lose.mp3")
 let menuThemeAudio = new Audio("assets/sounds/menu-theme.mp3")
@@ -39,7 +38,6 @@ let playingAudio = new Audio("assets/sounds/playing.mp3")
 let startAudio = new Audio("assets/sounds/start-audio.mp3")
 startAudio.volume = 1
 
-snakePoints.innerHTML = `PONTOS: ${points}`
 
 document.addEventListener('keydown', (click) => {
     if (click.key === 'a' || click.key === 'ArrowLeft') {
@@ -56,26 +54,27 @@ document.addEventListener('keydown', (click) => {
     }
 })
 
+
+
+// 
 function play() {
 
     playingAudio.play()
-    
-    seconds =0
+    startMaster[0].style.display = "none";
+    seconds = 0
     minutes = 0
 
-    startMaster[0].style.display = "none";
-
     document.addEventListener('keydown', (click) => {
-        if (click.key === 'a' || click.key === 'ArrowLeft') {
+        if (click.key === 'a' || click.key === 'A' || click.key === 'ArrowLeft') {
             direction = 'left'
         }
-        else if (click.key === 'd' || click.key === 'ArrowRight') {
+        else if (click.key === 'd' || click.key === 'D' || click.key === 'ArrowRight') {
             direction = 'right'
         }
-        else if (click.key === 'w' || click.key === 'ArrowUp') {
+        else if (click.key === 'w' || click.key === 'W' || click.key === 'ArrowUp') {
             direction = 'up'
         }
-        else if (click.key === 's' || click.key === 'ArrowDown') {
+        else if (click.key === 's' || click.key === 'S' || click.key === 'ArrowDown') {
             direction = 'down'
         }
     })
@@ -101,14 +100,14 @@ function play() {
             }, 1000)
         }
     }
-
+ 
     function checkColision(){
         if (snake.colision(apple)) {
             points++
             snakePoints.innerHTML = `PONTOS: ${points}`
             apple.respawnApple()
             // Ao colidir com a maçã, o algoritmo adiciona um objeto da classe body no array, contendo as mesmas propriedades da cabeça da cobra
-            snakeTail.push(new Body(snake.x,snake.y,snake.w,snake.h,snake.a))
+            snakeTail.push(new Body(snake.x, snake.y, snake.w, snake.h, snake.a))
         }
     }
 
@@ -116,7 +115,7 @@ function play() {
         snake.drawHead()
         apple.drawApple()
         // Um loop lendo cada valor do array e desenhando individualmente
-        for(i = snakeTail.length - 1 ; i >= 0; i--){
+        for(i = snakeTail.length - 1; i >= 0; i--){
             snakeTail[i].drawBody()
             console.log(snakeTail)
         }
@@ -125,11 +124,11 @@ function play() {
     function refresh(){
         snake.refreshHead()
         // Esse algoritmo serve para desenhar a cauda da cobra com base no elemento anterior
-        for (i = snakeTail.length -1 ; i >= 0; i--){
+        for (i = snakeTail.length -1; i >= 0; i--){
             console.log(i)
             if (i === 0) {
-                snakeTail[i].x = posicaox
-                snakeTail[i].y = posicaoy
+                snakeTail[i].x = positionX
+                snakeTail[i].y = positionY
             } else {
                 snakeTail[i].x = snakeTail[i-1].x
                 snakeTail[i].y = snakeTail[i-1].y
@@ -142,8 +141,8 @@ function play() {
     function main(){
         if (snakeAlive) {
             des.clearRect(0, 0, 810, 510)
-            posicaox = snake.x
-            posicaoy = snake.y
+            positionX = snake.x
+            positionY = snake.y
             draw()
             refresh()
         }
@@ -151,7 +150,6 @@ function play() {
     apple.respawnApple()
     setInterval(main, 130)
 }
-
 
 
 // CARD FUNCTIONS

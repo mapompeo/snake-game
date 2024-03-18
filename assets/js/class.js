@@ -41,22 +41,6 @@ class Head extends Obj {
                 gameTimeDead.innerHTML = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
 
             }
-
-
-            // Algoritmo onde a cobra bate na parede e não morre
-        // if (this.x <= 0) {
-        //         this.x = 0
-        //     }
-        // else if (this.x >= 800 - this.w) {
-        //         this.x = 800 - this.w
-        //     }
-
-        // if (this.y <= 0) {
-        //         this.y = 0
-        //     }
-        // else if (this.y >= 510 - this.h) {
-        //         this.y = 510 - this.h
-        //     }
     }
 
     colision(reference) {
@@ -73,21 +57,18 @@ class Head extends Obj {
     }
 
     restartSnake(){
+        playAgainMaster[0].style.display = "none";
         this.x = 60
         this.y = 60
         points = 0
         direction = ''
+        seconds = 0
+        minutes = 0
+        counting = 0
         apple.respawnApple()
         snakePoints.innerHTML = `PONTOS: ${points}`
         snakeTail = []
         snakeAlive = true
-        
-        seconds = 0
-        minutes = 0
-        counting = 0
-
-        playAgainMaster[0].style.display = "none";
-
         gameTime.innerText = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
     }
 }
