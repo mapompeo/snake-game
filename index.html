@@ -30,9 +30,9 @@
         <button class="buttonClose" onclick="closePlayAgain()"><img src="assets/images/menu/button-close.svg" alt="Botão de fechar"></button>
         <div class="card">
             <div class="cardButtons">
-                <button class="button result">PONTOS:</button>
-                <button class="button result">TEMPO:</button>
-                <button class="button playAgainButton" onclick="restartSnake()">JOGAR NOVAMENTE</button>
+                <button class="button result" id="snakePointsDead">PONTOS:</button>
+                <button class="button result" id="gameTimeDead">TEMPO:</button>
+                <button class="button playAgainButton" onclick="snake.restartSnake()">JOGAR NOVAMENTE</button>
             </div>
         </div>
     </div>

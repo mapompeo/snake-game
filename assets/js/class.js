@@ -77,6 +77,7 @@ class Head extends Obj {
         snakePoints.innerHTML = `PONTOS: ${points}`
         snakeTail = []
         snakeAlive = true
+        playAgainMaster[0].style.display = "none"
     }
 }
 

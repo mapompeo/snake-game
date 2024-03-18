@@ -117,11 +117,16 @@ canvas {
 }
 
 .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
     position: absolute;
+    width: 100px;
+    height: 100px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -135%);
+    transform: translate(-50%, -245%);
 }
 
 .logo {

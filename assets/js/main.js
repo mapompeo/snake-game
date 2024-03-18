@@ -17,9 +17,8 @@ let playAgainMaster = document.getElementsByClassName('playAgainMaster')
 let creditsMaster = document.getElementsByClassName('creditsMaster')
 let definitionsMaster = document.getElementsByClassName('definitionsMaster')
 
-window.addEventListener("load", function() {
-    
-})
+// MUSIC
+
 
 snakePoints.innerHTML = `PONTOS: ${points}`
 
@@ -50,8 +49,11 @@ let posicaox = null, posicaoy = null
 let start = document.getElementsByClassName('start')
 
 
-
 function play() {
+
+    
+    seconds =0
+    minutes = 0
 
     startMaster[0].style.display = "none";
 
@@ -135,10 +137,6 @@ function play() {
             posicaoy = snake.y
             draw()
             refresh()
-        } else {
-            seconds = -1
-            minutes = 0
-            
         }
     }
     apple.respawnApple()
