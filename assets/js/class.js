@@ -36,6 +36,10 @@ class Head extends Obj {
             this.y > 510 - this.h) {
                 snakeAlive = false
                 playAgainMaster[0].style.display = "block";
+                clearInterval(counting)
+                snakePointsDead.innerHTML = `PONTOS: ${points}`
+                gameTimeDead.innerHTML = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+
             }
 
 
@@ -77,7 +81,14 @@ class Head extends Obj {
         snakePoints.innerHTML = `PONTOS: ${points}`
         snakeTail = []
         snakeAlive = true
-        playAgainMaster[0].style.display = "none"
+        
+        seconds = 0
+        minutes = 0
+        counting = 0
+
+        playAgainMaster[0].style.display = "none";
+
+        gameTime.innerText = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
     }
 }
 
@@ -85,10 +96,6 @@ class Body extends Obj {
     drawBody(){
         des.fillStyle = this.a
         des.fillRect(this.x, this.y, this.w, this.h)
-    }
-    
-    refreshBody(){
-        
     }
 }
 

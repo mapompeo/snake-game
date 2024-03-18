@@ -16,6 +16,9 @@ let startMaster = document.getElementsByClassName('startMaster')
 let playAgainMaster = document.getElementsByClassName('playAgainMaster')
 let creditsMaster = document.getElementsByClassName('creditsMaster')
 let definitionsMaster = document.getElementsByClassName('definitionsMaster')
+let snakePointsDead = document.getElementById('snakePointsDead')
+let gameTimeDead = document.getElementById('gameTimeDead')
+
 
 // MUSIC
 
@@ -80,6 +83,7 @@ function play() {
 
     // Código para o funcionamento do cronômetro
     function updateTime() {
+        
         if (counting === 0) {
             counting = setInterval(() => {
                 seconds++
@@ -137,10 +141,13 @@ function play() {
             posicaoy = snake.y
             draw()
             refresh()
+        } else {
+            seconds = -1
+            minutes = 0
         }
     }
     apple.respawnApple()
-    setInterval(main, 120)
+    setInterval(main, 130)
 }
 
 
