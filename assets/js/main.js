@@ -19,6 +19,16 @@ let definitionsMaster = document.getElementsByClassName('definitionsMaster')
 let snakePointsDead = document.getElementById('snakePointsDead')
 let gameTimeDead = document.getElementById('gameTimeDead')
 
+// TIMER
+let gameTime = document.getElementById('gameTime')
+let seconds = 0, minutes = 0, counting = 0
+
+// MOVEMENT
+let direction = null
+let posicaox = null, posicaoy = null
+
+// START SCREEN
+let start = document.getElementsByClassName('start')
 
 // MUSIC
 
@@ -39,18 +49,6 @@ document.addEventListener('keydown', (click) => {
         direction = 'down'
     }
 })
-
-// TIMER
-let gameTime = document.getElementById('gameTime')
-let seconds = 0, minutes = 0, counting = 0
-
-// MOVEMENT
-let direction = null
-let posicaox = null, posicaoy = null
-
-// START SCREEN
-let start = document.getElementsByClassName('start')
-
 
 function play() {
 
@@ -141,9 +139,6 @@ function play() {
             posicaoy = snake.y
             draw()
             refresh()
-        } else {
-            seconds = -1
-            minutes = 0
         }
     }
     apple.respawnApple()
