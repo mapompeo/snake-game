@@ -32,6 +32,12 @@ let start = document.getElementsByClassName('start')
 
 // MUSIC
 
+let bitingAppleAudio = new Audio("assets/sounds/biting-apple.mp3")
+let loseAudio = new Audio("assets/sounds/lose.mp3")
+let menuThemeAudio = new Audio("assets/sounds/menu-theme.mp3")
+let playingAudio = new Audio("assets/sounds/playing.mp3")
+let startAudio = new Audio("assets/sounds/start-audio.mp3")
+startAudio.volume = 1
 
 snakePoints.innerHTML = `PONTOS: ${points}`
 
@@ -52,6 +58,7 @@ document.addEventListener('keydown', (click) => {
 
 function play() {
 
+    playingAudio.play()
     
     seconds =0
     minutes = 0
