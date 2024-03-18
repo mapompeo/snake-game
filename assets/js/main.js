@@ -50,7 +50,11 @@ let posicaox = null, posicaoy = null
 let start = document.getElementsByClassName('start')
 
 
+
 function play() {
+
+    startMaster[0].style.display = "none";
+
     document.addEventListener('keydown', (click) => {
         if (click.key === 'a' || click.key === 'ArrowLeft') {
             direction = 'left'
@@ -134,11 +138,7 @@ function play() {
         } else {
             seconds = -1
             minutes = 0
-            if (window.confirm('Você morreu, quer tentar novamente?')){
-                snakeAlive = true
-                snake.restartSnake()
-            } else {
-            }
+            
         }
     }
     apple.respawnApple()
