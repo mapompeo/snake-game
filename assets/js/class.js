@@ -36,6 +36,9 @@ class Head extends Obj {
             this.y > 510 - this.h) {
                 snakeAlive = false
                 playAgainMaster[0].style.display = "block";
+                loseAudio.play()
+                playingAudio.pause()
+                menuTheme.play()
                 clearInterval(counting)
                 snakePointsDead.innerHTML = `PONTOS: ${points}`
                 gameTimeDead.innerHTML = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
@@ -57,6 +60,9 @@ class Head extends Obj {
     }
 
     restartSnake(){
+        startAudio.play()
+        playingAudio.play()
+        menuTheme.pause()
         playAgainMaster[0].style.display = "none";
         this.x = 60
         this.y = 60

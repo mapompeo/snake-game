@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <audio id="menuTheme" autoplay loop src="assets/sounds/menu-theme.mp3"></audio>
+
     <!-- START -->
     <div class="cardMaster startMaster">
         <a href="index.html" class="logoContainer"><img class="logo" src="assets/images/menu/jkm-logo.svg" alt="Logo do jogo - Jornada da Kobra Mística"></a>
@@ -65,12 +68,12 @@
         <div class="definitions card">
             <div class="settings">
                 <div class="settingsElements">
-                    <p class="rangeText">Volume</p>
-                    <input type="range">
+                    <label for="rangeVolume" class="rangeText">Volume</label>
+                    <input type="range" for="rangeVolume">
                 </div>
                 <div class="settingsElements">
-                    <p class="rangeText">Efeitos sonoros</p>
-                    <input type="range">
+                    <label for="rangeSoundEffects" class="rangeText">Efeitos sonoros</label>
+                    <input type="range" id="rangeSoundEffects">
                 </div>
             </div>
             <img class="wasdArrows" src="assets/images/menu/wasd-arrows.svg" alt="Imagem mostrando as teclas WASD e setas">
