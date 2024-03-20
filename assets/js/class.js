@@ -88,8 +88,12 @@ class Body extends Obj {
 
 class Apple extends Obj{
     drawApple(){
-        des.fillStyle = this.a
-        des.fillRect(this.x, this.y, this.w, this.h)
+        let image = new Image();
+        // Função para executar uma ação específica quando a imagem for totalmente carregada na página
+        image.onload = () => {
+            des.drawImage(image, this.x, this.y, this.w, this.h)
+        }
+        image.src = this.a
     }
 
     respawnApple(){
