@@ -1,19 +1,16 @@
 // CANVAS
 let des = document.getElementById('des').getContext('2d')
 
-
 // SNAKE
-let snake = new Head(60,60,30,30,'green')
+let snake = new Head(60, 60, 30, 30, 'green')
 let snakeTail = []
 let snakeAlive = true
 
-
 // ITEMS
-let apple = new Apple(600,300,30,30,'../assets/images/apple.svg', )
+let apple = new Apple(600, 300, 30, 30, '../assets/images/apple.svg', )
 let points = 0
 let snakePoints = document.getElementById('snakePoints')
 let gameInterval
-
 
 // CARDS
 let startMasterDOM = document.getElementsByClassName('startMasterDOM')
@@ -24,16 +21,13 @@ let definitionsMaster = document.getElementsByClassName('definitionsMaster')
 let snakePointsDead = document.getElementById('snakePointsDead')
 let gameTimeDead = document.getElementById('gameTimeDead')
 
-
 // TIMER
 let gameTime = document.getElementById('gameTime')
 let seconds = 0, minutes = 0, counting = 0
 
-
 // MOVEMENT
 let direction = null
 let positionX = null, positionY = null
-
 
 // MUSIC
 let bitingAppleAudio = new Audio("assets/sounds/biting-apple.mp3")
@@ -45,7 +39,6 @@ const soundEffectElement = document.getElementById("rangeSoundEffects");
 const volumeElement = document.getElementById("rangeVolume");
 menuTheme.loop = true
 playingAudio.loop = true
-
 
 
 // Código para funcionar o range input dos sons
@@ -165,7 +158,6 @@ function play() {
         }
     }
     
-
     // Função parar cancelar o intervalo de jogo existente caso houver
     if (gameInterval) {
         clearInterval(gameInterval)
