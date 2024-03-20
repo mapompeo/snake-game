@@ -1,15 +1,19 @@
 // CANVAS
 let des = document.getElementById('des').getContext('2d')
 
+
 // SNAKE
 let snake = new Head(60,60,30,30,'green')
 let snakeTail = []
 let snakeAlive = true
 
+
 // ITEMS
-let apple = new Apple(600,300,30,30,'red')
+let apple = new Apple(600,300,30,30,'../assets/images/apple.svg', )
 let points = 0
 let snakePoints = document.getElementById('snakePoints')
+let gameInterval
+
 
 // CARDS
 let startMasterDOM = document.getElementsByClassName('startMasterDOM')
@@ -20,16 +24,16 @@ let definitionsMaster = document.getElementsByClassName('definitionsMaster')
 let snakePointsDead = document.getElementById('snakePointsDead')
 let gameTimeDead = document.getElementById('gameTimeDead')
 
+
 // TIMER
 let gameTime = document.getElementById('gameTime')
 let seconds = 0, minutes = 0, counting = 0
+
 
 // MOVEMENT
 let direction = null
 let positionX = null, positionY = null
 
-// START SCREEN
-let start = document.getElementsByClassName('start')
 
 // MUSIC
 let bitingAppleAudio = new Audio("assets/sounds/biting-apple.mp3")
@@ -75,7 +79,8 @@ function startHTML() {
 
 // Conjunto de funções para funcionar a parte principal do jogo
 
-function play() {
+function play() { 
+    restartGame()
 
     startAudio.play()
     playingAudio.play()
@@ -97,11 +102,6 @@ function play() {
         }
         else if (click.key === 's' || click.key === 'S' || click.key === 'ArrowDown') {
             direction = 'down'
-        }
-    })
-
-    document.addEventListener('click', () => {
-        for (let i = 0; i < start.length; i++) {
         }
     })
 
@@ -164,8 +164,31 @@ function play() {
             refresh()
         }
     }
+    
+
+    // Função parar cancelar o intervalo de jogo existente caso houver
+    if (gameInterval) {
+        clearInterval(gameInterval)
+    }
+
+    gameInterval = setInterval(main, 130)
     apple.respawnApple()
-    setInterval(main, 130)
+}
+
+function restartGame() {
+    snake = new Head(60,60,30,30,'green')
+    snakeTail = []
+    snakeAlive = true
+    points = 0
+    seconds = 0
+    minutes = 0
+    counting = 0
+    direction = null
+    positionX = null
+    positionY = null
+    snakePoints.innerHTML = `PONTOS: ${points}`
+    gameTime.innerText = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+    apple.respawnApple()
 }
 
 
