@@ -33,15 +33,20 @@ class Head extends Obj {
         if (this.x < 0 || 
             this.x > 810 - this.w || 
             this.y < 0 || 
-            this.y > 510 - this.h) {
-                snakeAlive = false
-                playAgainMaster[0].style.display = "block";
-                loseAudio.play()
-                playingAudio.pause()
-                clearInterval(counting)
-                snakePointsDead.innerHTML = `PONTOS: ${points}`
-                gameTimeDead.innerHTML = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+            this.y > 510 - this.h ) {
+                snake.killSnake()
             }
+    }
+
+    killSnake(){
+        snakeAlive = false
+        playAgainMaster[0].style.display = "block";
+        loseAudio.play()
+        playingAudio.pause()
+        menuTheme.play()
+        clearInterval(counting)
+        snakePointsDead.innerHTML = `PONTOS: ${points}`
+        gameTimeDead.innerHTML = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
     }
 
     colision(reference) {
@@ -86,7 +91,7 @@ class Body extends Obj {
 
 class Apple extends Obj{
     drawApple(){
-        let image = new Image();
+        let image = new Image()
         // Função para executar uma ação específica quando a imagem for totalmente carregada na página
         image.onload = () => {
             des.drawImage(image, this.x, this.y, this.w, this.h)
@@ -100,14 +105,24 @@ class Apple extends Obj{
         do {
             randomNumber = Math.floor(Math.random() * (((800 - this.w) - 30 + 1) + 30));
         } 
-        while (randomNumber % 30 !== 0);
+        while (randomNumber % 30 !== 0)
         this.x = randomNumber
 
         do {
             randomNumber = Math.floor(Math.random() * (((500 - this.h) - 30 + 1) + 30));
         } 
-        while (randomNumber % 30 !== 0);
+        while (randomNumber % 30 !== 0)
         this.y = randomNumber
+
+        this.checkAppleRespawnPosition()
+    }
+    
+    checkAppleRespawnPosition(){
+        for(let i = snakeTail.length - 1; i >= 0; i--){
+            if(this.x == snakeTail[i].x && this.y == snakeTail[i].y){
+                this.respawnApple()
+            }
+        }
     }
 }
 
