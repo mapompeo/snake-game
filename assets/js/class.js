@@ -38,11 +38,9 @@ class Head extends Obj {
                 playAgainMaster[0].style.display = "block";
                 loseAudio.play()
                 playingAudio.pause()
-                menuTheme.play()
                 clearInterval(counting)
                 snakePointsDead.innerHTML = `PONTOS: ${points}`
                 gameTimeDead.innerHTML = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
-
             }
     }
 

@@ -12,6 +12,7 @@ let points = 0
 let snakePoints = document.getElementById('snakePoints')
 
 // CARDS
+let startMasterDOM = document.getElementsByClassName('startMasterDOM')
 let startMaster = document.getElementsByClassName('startMaster')
 let playAgainMaster = document.getElementsByClassName('playAgainMaster')
 let creditsMaster = document.getElementsByClassName('creditsMaster')
@@ -31,21 +32,48 @@ let positionX = null, positionY = null
 let start = document.getElementsByClassName('start')
 
 // MUSIC
-const soundEffectElement = document.getElementById("rangeSoundEffects");
-const volumeElement = document.getElementById("rangeVolume");
 let bitingAppleAudio = new Audio("assets/sounds/biting-apple.mp3")
 let loseAudio = new Audio("assets/sounds/lose.mp3")
 let playingAudio = new Audio("assets/sounds/playing.mp3")
 let startAudio = new Audio("assets/sounds/start-audio.mp3")
-let menuTheme = document.getElementById('menuTheme') // esta variável da parte dos sons é diferente pois o usuário precisa interagir com a página antes de tocar um som, e para isso ela foi definida no html, pois é o único modo de fazer funcionar
+let menuTheme = new Audio("assets/sounds/menu-theme.mp3")
+const soundEffectElement = document.getElementById("rangeSoundEffects");
+const volumeElement = document.getElementById("rangeVolume");
+menuTheme.loop = true
+playingAudio.loop = true
 
-// Valores padrão do volume dos sons do jogo (exemplo 0.7)
-bitingAppleAudio.volume = 1
-loseAudio.volume = 1
-playingAudio.volume = 1
-startAudio.volume = 1
-menuTheme.volume = 1
 
+
+// Código para funcionar o range input dos sons
+document.addEventListener('DOMContentLoaded', function() {
+    function updateSoundEffects(element) {
+        const volume = element.value / 100 // Normaliza o valor entre 0 e 1
+        bitingAppleAudio.volume = volume
+        loseAudio. volume = volume
+        startAudio.volume = volume
+    }
+
+    function updateVolume(element) {
+        const volume = element.value / 100
+        menuTheme.volume = volume
+        playingAudio.volume = volume
+    }
+
+    soundEffectElement.addEventListener("change", () => updateSoundEffects(soundEffectElement));
+
+    volumeElement.addEventListener("change", () => updateVolume(volumeElement));
+})
+
+
+// função para começar a funcionar os áudios e ir para o card principal do menu
+function startHTML() {
+    menuTheme.play()
+    startMasterDOM[0].style.display = "none"
+    startMaster[0].style.display = "block"
+}
+
+
+// Conjunto de funções para funcionar a parte principal do jogo
 
 function play() {
 
@@ -53,7 +81,7 @@ function play() {
     playingAudio.play()
     menuTheme.pause()
 
-    startMaster[0].style.display = "none";
+    startMaster[0].style.display = "none"
     seconds = 0
     minutes = 0
 
@@ -153,7 +181,7 @@ function credits() {
     creditsMaster[0].style.display = "block";
 }
 
-function closeDefinitions() {
+function closeDefinitions() {   
     definitionsMaster[0].style.display = "none";
     startMaster[0].style.display = "block";
 }
@@ -164,84 +192,9 @@ function closeCredits() {
 }
 
 function closePlayAgain() {
+    menuTheme.play()
     playAgainMaster[0].style.display = "none";
     startMaster[0].style.display = "block";
 }
 
 // END CARD FUNCTIONS
-
-
-// AUDIO
-
-// Funções para salvar no navegador o volume que o usuário definir no input range
-// function saveVolume() {
-//     const volume = document.getElementById("rangeVolume").value;
-//     localStorage.setItem("volume", volume);
-//   }
-  
-//   window.onload = function() {
-//     const volume = localStorage.getItem("volume");
-//     if (volume) {
-//       document.getElementById("rangeVolume").value = volume;
-//     }
-// }
-
-// function saveVolume() {
-//     const volume = document.getElementById("rangeSoundEffects").value;
-//     localStorage.setItem("volume", volume);
-//   }
-  
-//   window.onload = function() {
-//     const volume = localStorage.getItem("volume");
-//     if (volume) {
-//       document.getElementById("rangeSoundEffects").value = volume;
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
-// CÓDIGO ANTIGO QUE NÃO ESTAVA FUNCIONANDO
-// Funções para alterar o volume dos sons e músicas do jogo dependendo do valor do input range na aba de definições
-// soundEffectElement.addEventListener("change", () => {
-//     bitingAppleAudio.volume = soundEffectElement
-//     loseAudio.volume = soundEffectElement
-//     startAudio.volume = soundEffectElement
-// })
-
-// volumeElement.addEventListener("change", () => {
-//     menuTheme.volume = volumeElement
-//     playingAudio.volume = volumeElement
-// })
-
-
-
-
-// CÓDIGO AINDA NÃO FINALIZADO POIS ACABOU O TEMPO DE AULA
-const soundEffectElementAudio = document.getElementById("rangeSoundEffects");
-const volumeElementAudio = document.getElementById("rangeVolume");
-
-// Função para atualizar o volume com base no valor do range
-function updateVolume(element) {
-  const volume = element.value / 100; // Normaliza o valor entre 0 e 1
-  // Insira aqui o código para alterar o volume do áudio (substitua 'elementoAudio' pelo seu elemento de áudio)
-  elementoAudio.volume = volume;
-}
-
-// Adiciona evento 'onchange' para cada range
-soundEffectElement.addEventListener("change", () => updateVolume(soundEffectElementAudio));
-volumeElement.addEventListener("change", () => updateVolume(volumeElementAudio));
-
-
-
-
-
-
-// END AUDIO

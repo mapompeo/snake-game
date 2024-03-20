@@ -96,7 +96,7 @@ canvas {
     transform: translate(-50%, -50%);
 }
 
-.card {
+.card, .startMasterHTML {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -348,8 +348,8 @@ input[type="range"] {
 
 input[type='range']::-webkit-slider-thumb {
     box-sizing: border-box;
-    width: 29px;
-    height: 39px;
+    width: 30px;
+    height: 30px;
     background-image: url(../images/apple.svg);
     display: flex;
     justify-content: center;
@@ -363,13 +363,6 @@ input[type='range']::-webkit-slider-thumb {
 
 /* END DEFINITIONS */
 
-
-/* fazendo funcionar os cards */
-
 .startMaster, .playAgainMaster, .creditsMaster, .definitionsMaster {
     display: none;
-}
-
-.startMaster {
-    display: block;
 }
