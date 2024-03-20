@@ -93,6 +93,11 @@ function play() {
     }
  
     function checkColision(){
+        for(i = snakeTail.length -1; i >= 0; i--){
+            if(snake.colision(snakeTail[i])){
+                snake.killSnake()
+            }
+        }
         if (snake.colision(apple)) {
             points++
             snakePoints.innerHTML = `PONTOS: ${points}`
@@ -100,12 +105,15 @@ function play() {
             // Ao colidir com a maçã, o algoritmo adiciona um objeto da classe body no array, contendo as mesmas propriedades da cabeça da cobra
             snakeTail.push(new Body(snake.x, snake.y, snake.w, snake.h, snake.a))
         }
+        
     }
 
     function draw(){
         snake.drawHead()
         apple.drawApple()
         // Um loop lendo cada valor do array e desenhando individualmente o tamanho da cobrinha
+        positionX = snake.x
+        positionY = snake.y
         for(i = snakeTail.length - 1; i >= 0; i--){
             snakeTail[i].drawBody()
         }
@@ -129,9 +137,7 @@ function play() {
 
     function main(){
         if (snakeAlive) {
-            des.clearRect(0, 0, 810, 510)
-            positionX = snake.x
-            positionY = snake.y
+            des.clearRect(0, 0, 810, 510)    
             draw()
             refresh()
         }

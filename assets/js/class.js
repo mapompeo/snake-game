@@ -33,17 +33,21 @@ class Head extends Obj {
         if (this.x < 0 || 
             this.x > 810 - this.w || 
             this.y < 0 || 
-            this.y > 510 - this.h) {
-                snakeAlive = false
-                playAgainMaster[0].style.display = "block";
-                loseAudio.play()
-                playingAudio.pause()
-                menuTheme.play()
-                clearInterval(counting)
-                snakePointsDead.innerHTML = `PONTOS: ${points}`
-                gameTimeDead.innerHTML = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
-
+            this.y > 510 - this.h ) {
+                snake.killSnake()
             }
+    }
+
+    killSnake(){
+        snakeAlive = false
+        playAgainMaster[0].style.display = "block";
+        loseAudio.play()
+        playingAudio.pause()
+        menuTheme.play()
+        clearInterval(counting)
+        snakePointsDead.innerHTML = `PONTOS: ${points}`
+        gameTimeDead.innerHTML = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+
     }
 
     colision(reference) {
@@ -106,6 +110,16 @@ class Apple extends Obj{
         } 
         while (randomNumber % 30 !== 0);
         this.y = randomNumber
+
+        this.checkAppleRespawnPosition()
+    }
+    
+    checkAppleRespawnPosition(){
+        for(let i = snakeTail.length - 1; i >= 0; i--){
+            if(this.x == snakeTail[i].x && this.y == snakeTail[i].y){
+                this.respawnApple()
+            }
+        }
     }
 }
 
