@@ -2,7 +2,7 @@
 let des = document.getElementById('des').getContext('2d')
 
 // SNAKE
-let snake = new Head(60, 60, 30, 30, 'green')
+let snake = new Head(60, 60, 30, 30, '4BAD00')
 let snakeTail = []
 let snakeAlive = true
 
@@ -169,12 +169,12 @@ function play() {
         clearInterval(gameInterval)
     }
 
-    gameInterval = setInterval(main, 130)
+    gameInterval = setInterval(main, 170)
     apple.respawnApple()
 }
 
 function restartGame() {
-    snake = new Head(60,60,30,30,'green')
+    snake = new Head(60,60,30,30,'#4BAD00')
     snakeTail = []
     snakeAlive = true
     points = 0
