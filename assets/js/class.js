@@ -10,8 +10,16 @@ class Obj {
 
 class Head extends Obj {
     drawHead() {
-        des.fillStyle = this.a
-        des.fillRect(this.x, this.y, this.w, this.h)
+
+        des.beginPath()
+        
+        des.lineWidth = '2'
+        des.strokeStyle = 'black'
+        des.arc(this.x, this.y, 15, 0, (180 * (Math.PI)/180))
+
+        des.closePath()
+        des.stroke()
+        des.fill()
     }
 
     refreshHead() {
