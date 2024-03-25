@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-25T11:31:29.387Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="B0Rk45xeM9noYHtISGxi" version="24.0.7" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-25T11:31:44.215Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="srFWKKasZXsJqV6qk8OJ" version="24.0.7" type="github">
   <diagram name="Página-1" id="snx0YpBr6MKP5n9HAAY5">
-    <mxGraphModel dx="1707" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1257" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -59,12 +59,6 @@
         </mxCell>
         <mxCell id="O1kkgdQx-6lh8aL8HpDs-31" value="&lt;b style=&quot;font-size: 36px;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;JKM Snake Game&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=36;" parent="1" vertex="1">
           <mxGeometry x="279" y="50" width="330" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="SYbeNjsCwblVd36RPF-s-1" value="&lt;div&gt;Play&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-100" y="210" width="190" height="300" as="geometry" />
-        </mxCell>
-        <mxCell id="SYbeNjsCwblVd36RPF-s-2" value="&lt;div&gt;restartGame(): void&lt;/div&gt;&lt;div&gt;startAudio.play(): void&lt;/div&gt;&lt;div&gt;playingAudio.play(): void&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;menuTheme.pause(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;updateTime: void&lt;br&gt;&lt;/div&gt;&lt;div&gt;checkColision: void&lt;br&gt;&lt;/div&gt;&lt;div&gt;draw: void&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;snake.drawHead(): void&lt;/div&gt;&lt;div&gt;apple.drawApple(): void&lt;/div&gt;&lt;/div&gt;&lt;div&gt;refresh(): void&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; snake.refreshHead(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;checkColision(): void&lt;/div&gt;&lt;div&gt;updateTime(): void&lt;/div&gt;&lt;/div&gt;&lt;div&gt;main(): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;draw(): void&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;refresh(): void&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;apple.respawnApple(): void&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SYbeNjsCwblVd36RPF-s-1">
-          <mxGeometry y="26" width="190" height="274" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
