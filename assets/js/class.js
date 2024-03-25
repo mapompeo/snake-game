@@ -10,13 +10,10 @@ class Obj {
 
 class Head extends Obj {
     drawHead() {
-
         des.beginPath()
-        
         des.lineWidth = '2'
         des.strokeStyle = 'black'
         des.arc(this.x, this.y, 15, 0, (180 * (Math.PI)/180))
-
         des.closePath()
         des.stroke()
         des.fill()
@@ -131,14 +128,5 @@ class Apple extends Obj{
                 this.respawnApple()
             }
         }
-    }
-}
-
-class Text{
-    drawText(text, x, y, color, font){
-        des.fillStyle = color
-        des.lineWidth = '5'
-        des.font = font
-        des.fillText(text, x, y)
     }
 }

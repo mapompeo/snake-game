@@ -55,9 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         menuTheme.volume = volume
         playingAudio.volume = volume
     }
-
     soundEffectElement.addEventListener("change", () => updateSoundEffects(soundEffectElement));
-
     volumeElement.addEventListener("change", () => updateVolume(volumeElement));
 })
 
@@ -72,15 +70,12 @@ function startHTML() {
 // Conjunto de funções para funcionar a parte principal do jogo
 function play() { 
     restartGame()
-
     startAudio.play()
     playingAudio.play()
     menuTheme.pause()
-
     startMaster[0].style.display = "none"
     seconds = 0
     minutes = 0
-
     document.addEventListener('keydown', (click) => {
         if (click.key === 'a' || click.key === 'A' || click.key === 'ArrowLeft') {
             direction = 'left'
@@ -124,7 +119,6 @@ function play() {
             // Ao colidir com a maçã, o algoritmo adiciona um objeto da classe body no array, contendo as mesmas propriedades da cabeça da cobra
             snakeTail.push(new Body(snake.x, snake.y, snake.w, snake.h, snake.a))
         }
-        
     }
 
     function draw(){
@@ -172,7 +166,7 @@ function play() {
 }
 
 function restartGame() {
-    snake = new Head(60,60,30,30,'#4BAD00')
+    snake = new Head(60, 60, 30, 30, '#4BAD00')
     snakeTail = []
     snakeAlive = true
     points = 0
