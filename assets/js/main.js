@@ -69,9 +69,7 @@ function startHTML() {
     startMaster[0].style.display = "block"
 }
 
-
 // Conjunto de funções para funcionar a parte principal do jogo
-
 function play() { 
     restartGame()
 
@@ -189,9 +187,7 @@ function restartGame() {
     apple.respawnApple()
 }
 
-
 // CARD FUNCTIONS
-
 function definitions() {
     startMaster[0].style.display = "none";
     definitionsMaster[0].style.display = "block";
@@ -217,5 +213,4 @@ function closePlayAgain() {
     playAgainMaster[0].style.display = "none";
     startMaster[0].style.display = "block";
 }
-
 // END CARD FUNCTIONS
