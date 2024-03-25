@@ -1,22 +1,48 @@
 class Obj {
-    constructor(x, y, w, h, a){
+    constructor(x, y, w, h, a, radio, fixedAngle){
         this.x = x
         this.y = y
         this.w = w
         this.h = h
         this.a = a
+        this.radio = radio
+        this.fixedAngle = fixedAngle
+        // this.finalAngle = finalAngle
     }
 }
 
+let finalAngle = 0
+let overX = 0
+let overY = 0
+let rightEyeOverX = 0
+let rightEyeOverY = 0
+let leftEyeOverX = 0
+let leftEyeOverY = 0
 class Head extends Obj {
     drawHead() {
-
         des.beginPath()
-        
-        des.lineWidth = '2'
-        des.strokeStyle = 'black'
-        des.arc(this.x, this.y, 15, 0, (180 * (Math.PI)/180))
+        // Convertendo os ângulos para radianos
+        let startAngle = this.fixedAngle * Math.PI / 180
+        let endAngle = finalAngle * Math.PI / 180
+    
+        des.fillStyle = this.a
+        des.arc(this.x - (overX), this.y - (overY), 15, startAngle, endAngle)
+        des.closePath()
+        des.stroke()
+        des.fill()
+  
+// Olho direito
+        des.beginPath()
+        des.fillStyle = 'black'
+        des.rect(this.x-rightEyeOverX, this.y-rightEyeOverY,4,4)
+        des.closePath()
+        des.stroke()
+        des.fill()
 
+// Olho esquerdo
+        des.beginPath()
+        des.fillStyle = 'black'
+        des.rect(this.x-leftEyeOverX, this.y-leftEyeOverY,4,4)
         des.closePath()
         des.stroke()
         des.fill()
@@ -25,16 +51,52 @@ class Head extends Obj {
     refreshHead() {
         switch (direction) {
             case ('left'):
-                this.x -= 30
+                this.x -= 30  
+                this.fixedAngle = 90
+                finalAngle = 270
+                overY = 15 
+                overX = 30
+
+                rightEyeOverX = 45
+                rightEyeOverY = -1
+                leftEyeOverX = 45
+                leftEyeOverY = 15
                 break
             case ('right'):
                 this.x += 30
+                this.fixedAngle = 270
+                finalAngle = 90
+                overY = 15 
+                overX = 0
+
+                leftEyeOverX = -5
+                leftEyeOverY = 15
+                rightEyeOverX = -5
+                rightEyeOverY = -1  
                 break
             case ('up'):
                 this.y -= 30
+                this.fixedAngle = 180
+                finalAngle = 0
+                overX = 15 
+                overY = 30
+                
+                leftEyeOverX = 12
+                leftEyeOverY = 32
+                rightEyeOverX = 28
+                rightEyeOverY = 32
                 break
             case ('down'):
                 this.y += 30
+                this.fixedAngle = 0
+                finalAngle = 180
+                overX = 15 
+                overY = 0
+
+                leftEyeOverX = 28
+                leftEyeOverY = -17
+                rightEyeOverX = 11
+                rightEyeOverY = -17
                 break
         }
 

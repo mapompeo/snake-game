@@ -2,7 +2,7 @@
 let des = document.getElementById('des').getContext('2d')
 
 // SNAKE
-let snake = new Head(60, 60, 30, 30, 'green')
+let snake = new Head(60, 60, 30, 30, 'green', 30, 0)
 let snakeTail = []
 let snakeAlive = true
 
