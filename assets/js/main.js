@@ -2,7 +2,7 @@
 let des = document.getElementById('des').getContext('2d')
 
 // SNAKE
-let snake = new Head(60, 60, 30, 30, 'green', 30, 0)
+let snake = new Head(60, 60, 30, 30, '4BAD00')
 let snakeTail = []
 let snakeAlive = true
 
@@ -69,9 +69,7 @@ function startHTML() {
     startMaster[0].style.display = "block"
 }
 
-
 // Conjunto de funções para funcionar a parte principal do jogo
-
 function play() { 
     restartGame()
 
@@ -169,12 +167,12 @@ function play() {
         clearInterval(gameInterval)
     }
 
-    gameInterval = setInterval(main, 130)
+    gameInterval = setInterval(main, 170)
     apple.respawnApple()
 }
 
 function restartGame() {
-    snake = new Head(60,60,30,30,'green')
+    snake = new Head(60,60,30,30,'#4BAD00')
     snakeTail = []
     snakeAlive = true
     points = 0
@@ -189,9 +187,7 @@ function restartGame() {
     apple.respawnApple()
 }
 
-
 // CARD FUNCTIONS
-
 function definitions() {
     startMaster[0].style.display = "none";
     definitionsMaster[0].style.display = "block";
@@ -217,5 +213,4 @@ function closePlayAgain() {
     playAgainMaster[0].style.display = "none";
     startMaster[0].style.display = "block";
 }
-
 // END CARD FUNCTIONS

@@ -50,7 +50,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
     height: 100vh;
 }
 
@@ -78,6 +77,7 @@ body {
 
 canvas {
     background-color: var(--lightGreen);
+    background-image: url(../images/background.svg);
     border: var(--defaultBorder);
     border-radius: 8px;
     opacity: 1;
