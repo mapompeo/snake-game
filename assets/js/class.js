@@ -1,19 +1,47 @@
 class Obj {
-    constructor(x, y, w, h, a){
+    constructor(x, y, w, h, a, radio, fixedAngle){
         this.x = x
         this.y = y
         this.w = w
         this.h = h
         this.a = a
+        this.radio = radio
+        this.fixedAngle = fixedAngle
+        // this.finalAngle = finalAngle
     }
 }
 
+let finalAngle = 0
+let overX = 0
+let overY = 0
+let rightEyeOverX = 0
+let rightEyeOverY = 0
+let leftEyeOverX = 0
+let leftEyeOverY = 0
 class Head extends Obj {
     drawHead() {
         des.beginPath()
-        des.lineWidth = '2'
-        des.strokeStyle = 'black'
-        des.arc(this.x, this.y, 15, 0, (180 * (Math.PI)/180))
+        // Convertendo os ângulos para radianos
+        let startAngle = this.fixedAngle * Math.PI / 180
+        let endAngle = finalAngle * Math.PI / 180
+    
+        des.fillStyle = this.a
+        des.arc(this.x - (overX), this.y - (overY), 15, startAngle, endAngle)
+        des.closePath()
+        des.fill()
+  
+// Olho direito
+        des.beginPath()
+        des.fillStyle = 'black'
+        des.rect(this.x-rightEyeOverX, this.y-rightEyeOverY,4,4)
+        des.closePath()
+        des.stroke()
+        des.fill()
+
+// Olho esquerdo
+        des.beginPath()
+        des.fillStyle = 'black'
+        des.rect(this.x-leftEyeOverX, this.y-leftEyeOverY,4,4)
         des.closePath()
         des.stroke()
         des.fill()
@@ -22,16 +50,52 @@ class Head extends Obj {
     refreshHead() {
         switch (direction) {
             case ('left'):
-                this.x -= 30
+                this.x -= 30  
+                this.fixedAngle = 90
+                finalAngle = 270
+                overY = -15 
+                overX = -30
+
+                rightEyeOverX = -20
+                rightEyeOverY = -22
+                leftEyeOverX = -20
+                leftEyeOverY = -4
                 break
             case ('right'):
                 this.x += 30
+                this.fixedAngle = 270
+                finalAngle = 90
+                overY = -15 
+                overX = 0
+
+                leftEyeOverX = -5
+                leftEyeOverY = -3
+                rightEyeOverX = -5
+                rightEyeOverY = -23
                 break
             case ('up'):
                 this.y -= 30
+                this.fixedAngle = 180
+                finalAngle = 0
+                overX = -15 
+                overY = -30
+                
+                leftEyeOverX = -4
+                leftEyeOverY = -20
+                rightEyeOverX = -23
+                rightEyeOverY = -20
                 break
             case ('down'):
                 this.y += 30
+                this.fixedAngle = 0
+                finalAngle = 180
+                overX = -15 
+                overY = 0
+
+                leftEyeOverX = -3
+                leftEyeOverY = -5
+                rightEyeOverX = -22
+                rightEyeOverY = -5
                 break
         }
 
@@ -41,6 +105,23 @@ class Head extends Obj {
             this.y > 510 - this.h ) {
                 snake.killSnake()
             }
+
+           
+            // Algoritmo onde a cobra bate na parede e não morre
+            // Por favor pompeo (scrum master) não apague
+        // if (this.x <= 0) {
+        //         this.x = 0
+        //     }
+        // else if (this.x >= 810 - this.w) {
+        //         this.x = 810 - this.w
+        //     }
+
+        // if (this.y <= 0) {
+        //         this.y = 0
+        //     }
+        // else if (this.y >= 510 - this.h) {
+        //         this.y = 510 - this.h
+        //     }
     }
 
     killSnake(){
@@ -91,6 +172,7 @@ class Body extends Obj {
     drawBody(){
         des.fillStyle = this.a
         des.fillRect(this.x, this.y, this.w, this.h)
+        
     }
 }
 
@@ -108,13 +190,13 @@ class Apple extends Obj{
         // Algoritmo para arredondar os valores aleatórios em valores divisíveis por 30
         let randomNumber = null
         do {
-            randomNumber = Math.floor(Math.random() * (((800 - this.w) - 30 + 1) + 30));
+            randomNumber = Math.floor(Math.random() * (((810 - this.w) - 30 + 1) + 30));
         } 
         while (randomNumber % 30 !== 0)
         this.x = randomNumber
 
         do {
-            randomNumber = Math.floor(Math.random() * (((500 - this.h) - 30 + 1) + 30));
+            randomNumber = Math.floor(Math.random() * (((510 - this.h) - 30 + 1) + 30));
         } 
         while (randomNumber % 30 !== 0)
         this.y = randomNumber
