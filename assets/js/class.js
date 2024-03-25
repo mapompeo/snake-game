@@ -28,7 +28,6 @@ class Head extends Obj {
         des.fillStyle = this.a
         des.arc(this.x - (overX), this.y - (overY), 15, startAngle, endAngle)
         des.closePath()
-        des.stroke()
         des.fill()
   
 // Olho direito
@@ -54,49 +53,49 @@ class Head extends Obj {
                 this.x -= 30  
                 this.fixedAngle = 90
                 finalAngle = 270
-                overY = 15 
-                overX = 30
+                overY = -15 
+                overX = -30
 
-                rightEyeOverX = 45
-                rightEyeOverY = -1
-                leftEyeOverX = 45
-                leftEyeOverY = 15
+                rightEyeOverX = -20
+                rightEyeOverY = -22
+                leftEyeOverX = -20
+                leftEyeOverY = -4
                 break
             case ('right'):
                 this.x += 30
                 this.fixedAngle = 270
                 finalAngle = 90
-                overY = 15 
+                overY = -15 
                 overX = 0
 
                 leftEyeOverX = -5
-                leftEyeOverY = 15
+                leftEyeOverY = -3
                 rightEyeOverX = -5
-                rightEyeOverY = -1  
+                rightEyeOverY = -23
                 break
             case ('up'):
                 this.y -= 30
                 this.fixedAngle = 180
                 finalAngle = 0
-                overX = 15 
-                overY = 30
+                overX = -15 
+                overY = -30
                 
-                leftEyeOverX = 12
-                leftEyeOverY = 32
-                rightEyeOverX = 28
-                rightEyeOverY = 32
+                leftEyeOverX = -4
+                leftEyeOverY = -20
+                rightEyeOverX = -23
+                rightEyeOverY = -20
                 break
             case ('down'):
                 this.y += 30
                 this.fixedAngle = 0
                 finalAngle = 180
-                overX = 15 
+                overX = -15 
                 overY = 0
 
-                leftEyeOverX = 28
-                leftEyeOverY = -17
-                rightEyeOverX = 11
-                rightEyeOverY = -17
+                leftEyeOverX = -3
+                leftEyeOverY = -5
+                rightEyeOverX = -22
+                rightEyeOverY = -5
                 break
         }
 
@@ -106,6 +105,23 @@ class Head extends Obj {
             this.y > 510 - this.h ) {
                 snake.killSnake()
             }
+
+           
+            // Algoritmo onde a cobra bate na parede e não morre
+            // Por favor pompeo (scrum master) não apague
+        // if (this.x <= 0) {
+        //         this.x = 0
+        //     }
+        // else if (this.x >= 810 - this.w) {
+        //         this.x = 810 - this.w
+        //     }
+
+        // if (this.y <= 0) {
+        //         this.y = 0
+        //     }
+        // else if (this.y >= 510 - this.h) {
+        //         this.y = 510 - this.h
+        //     }
     }
 
     killSnake(){
@@ -156,6 +172,7 @@ class Body extends Obj {
     drawBody(){
         des.fillStyle = this.a
         des.fillRect(this.x, this.y, this.w, this.h)
+        
     }
 }
 
@@ -173,13 +190,13 @@ class Apple extends Obj{
         // Algoritmo para arredondar os valores aleatórios em valores divisíveis por 30
         let randomNumber = null
         do {
-            randomNumber = Math.floor(Math.random() * (((800 - this.w) - 30 + 1) + 30));
+            randomNumber = Math.floor(Math.random() * (((810 - this.w) - 30 + 1) + 30));
         } 
         while (randomNumber % 30 !== 0)
         this.x = randomNumber
 
         do {
-            randomNumber = Math.floor(Math.random() * (((500 - this.h) - 30 + 1) + 30));
+            randomNumber = Math.floor(Math.random() * (((510 - this.h) - 30 + 1) + 30));
         } 
         while (randomNumber % 30 !== 0)
         this.y = randomNumber

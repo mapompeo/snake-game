@@ -2,7 +2,7 @@
 let des = document.getElementById('des').getContext('2d')
 
 // SNAKE
-let snake = new Head(60, 60, 30, 30, '4BAD00')
+let snake = new Head(255, 404, 30, 30, '4BAD00')
 let snakeTail = []
 let snakeAlive = true
 
@@ -26,7 +26,7 @@ let gameTime = document.getElementById('gameTime')
 let seconds = 0, minutes = 0, counting = 0
 
 // MOVEMENT
-let direction = null
+let direction = 'right'
 let positionX = null, positionY = null
 
 // MUSIC
@@ -169,6 +169,9 @@ function play() {
 
     gameInterval = setInterval(main, 170)
     apple.respawnApple()
+    // for(i=0; i < 3; i++){
+    //     snakeTail.push(new Body(snake.x, snake.y, snake.w, snake.h, snake.a))
+    // }
 }
 
 function restartGame() {
@@ -214,3 +217,5 @@ function closePlayAgain() {
     startMaster[0].style.display = "block";
 }
 // END CARD FUNCTIONS
+
+
