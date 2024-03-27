@@ -65,17 +65,15 @@ function startHTML() {
     menuTheme.play()
     startMasterDOM[0].style.display = "none"
     startMaster[0].style.display = "block"
+    direction = 'right'
 }
 
 // Conjunto de funções para funcionar a parte principal do jogo
-function play() { 
-    restartGame()
-    startAudio.play()
-    playingAudio.play()
-    menuTheme.pause()
+function play() {
+    snake.restartSnake()
+
     startMaster[0].style.display = "none"
-    seconds = 0
-    minutes = 0
+
     document.addEventListener('keydown', (click) => {
         if (click.key === 'a' || click.key === 'A' || click.key === 'ArrowLeft') {
             direction = 'left'
@@ -116,7 +114,6 @@ function play() {
             points++
             snakePoints.innerHTML = `PONTOS: ${points}`
             apple.respawnApple()
-            // Ao colidir com a maçã, o algoritmo adiciona um objeto da classe body no array, contendo as mesmas propriedades da cabeça da cobra
             snakeTail.push(new Body(snake.x, snake.y, snake.w, snake.h, snake.a))
         }
     }
@@ -127,9 +124,9 @@ function play() {
         // Um loop lendo cada valor do array e desenhando individualmente o tamanho da cobrinha
         positionX = snake.x
         positionY = snake.y
-        for(i = snakeTail.length - 1; i >= 0; i--){
-            snakeTail[i].drawBody()
-        }
+        // for(i = snakeTail.length - 1; i >= 0; i--){
+        //     snakeTail[i].drawBody()
+        // }
     }
 
     function refresh(){
@@ -143,6 +140,7 @@ function play() {
                 snakeTail[i].x = snakeTail[i-1].x
                 snakeTail[i].y = snakeTail[i-1].y
             }
+            snakeTail[i].drawBody()
         }
         checkColision()
         updateTime()
@@ -150,9 +148,9 @@ function play() {
 
     function main(){
         if (snakeAlive) {
-            des.clearRect(0, 0, 810, 510)    
+            des.clearRect(0, 0, 810, 510) 
+            refresh()   
             draw()
-            refresh()
         }
     }
     
@@ -163,22 +161,14 @@ function play() {
 
     gameInterval = setInterval(main, 170)
     apple.respawnApple()
-    // for(i=0; i < 3; i++){
-    //     snakeTail.push(new Body(snake.x, snake.y, snake.w, snake.h, snake.a))
-    // }
 }
 
-function restartGame() {
-    snake = new Head(60, 60, 30, 30, '#4BAD00')
-    snakeTail = []
-    snakeAlive = true
-    points = 0
+function stopGame() {
+    snakeAlive = false
     seconds = 0
     minutes = 0
     counting = 0
     direction = null
-    positionX = null
-    positionY = null
     snakePoints.innerHTML = `PONTOS: ${points}`
     gameTime.innerText = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
     apple.respawnApple()

@@ -148,21 +148,22 @@ class Head extends Obj {
         }
     }
 
+    // nao apagar ainda pq n sei se isso é importante
     restartSnake(){
         startAudio.play()
         playingAudio.play()
         menuTheme.pause()
-        playAgainMaster[0].style.display = "none";
-        this.x = 60
-        this.y = 60
+        playAgainMaster[0].style.display = "none"; 
+        snake = new Head(60,60,30,30,'#4BAD00')
         points = 0
-        direction = ''
+        direction = 'right'
         seconds = 0
         minutes = 0
         counting = 0
         apple.respawnApple()
         snakePoints.innerHTML = `PONTOS: ${points}`
         snakeTail = []
+        snakeTail.push(new Body(snake.x-30, snake.y, snake.w, snake.h, snake.a))
         snakeAlive = true
         gameTime.innerText = `TEMPO: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
     }
