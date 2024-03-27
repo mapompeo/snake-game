@@ -1,3 +1,11 @@
+let finalAngle = 0
+let overX = 0
+let overY = 0
+let rightEyeOverX = 0
+let rightEyeOverY = 0
+let leftEyeOverX = 0
+let leftEyeOverY = 0
+
 class Obj {
     constructor(x, y, w, h, a, radio, fixedAngle){
         this.x = x
@@ -11,13 +19,6 @@ class Obj {
     }
 }
 
-let finalAngle = 0
-let overX = 0
-let overY = 0
-let rightEyeOverX = 0
-let rightEyeOverY = 0
-let leftEyeOverX = 0
-let leftEyeOverY = 0
 class Head extends Obj {
     drawHead() {
         des.beginPath()
@@ -30,7 +31,7 @@ class Head extends Obj {
         des.closePath()
         des.fill()
   
-// Olho direito
+        // Olho direito
         des.beginPath()
         des.fillStyle = 'black'
         des.rect(this.x-rightEyeOverX, this.y-rightEyeOverY,4,4)
@@ -38,7 +39,7 @@ class Head extends Obj {
         des.stroke()
         des.fill()
 
-// Olho esquerdo
+        // Olho esquerdo
         des.beginPath()
         des.fillStyle = 'black'
         des.rect(this.x-leftEyeOverX, this.y-leftEyeOverY,4,4)
@@ -105,23 +106,6 @@ class Head extends Obj {
             this.y > 510 - this.h ) {
                 snake.killSnake()
             }
-
-           
-            // Algoritmo onde a cobra bate na parede e não morre
-            // Por favor pompeo (scrum master) não apague
-        // if (this.x <= 0) {
-        //         this.x = 0
-        //     }
-        // else if (this.x >= 810 - this.w) {
-        //         this.x = 810 - this.w
-        //     }
-
-        // if (this.y <= 0) {
-        //         this.y = 0
-        //     }
-        // else if (this.y >= 510 - this.h) {
-        //         this.y = 510 - this.h
-        //     }
     }
 
     killSnake(){
@@ -148,7 +132,6 @@ class Head extends Obj {
         }
     }
 
-    // nao apagar ainda pq n sei se isso é importante
     restartSnake(){
         startAudio.play()
         playingAudio.play()
@@ -173,7 +156,6 @@ class Body extends Obj {
     drawBody(){
         des.fillStyle = this.a
         des.fillRect(this.x, this.y, this.w, this.h)
-        
     }
 }
 
@@ -194,14 +176,12 @@ class Apple extends Obj{
             randomNumber = Math.floor(Math.random() * (((810 - this.w) - 30 + 1) + 30));
         } 
         while (randomNumber % 30 !== 0)
-        this.x = randomNumber
-
         do {
             randomNumber = Math.floor(Math.random() * (((510 - this.h) - 30 + 1) + 30));
         } 
         while (randomNumber % 30 !== 0)
         this.y = randomNumber
-
+        this.x = randomNumber
         this.checkAppleRespawnPosition()
     }
     

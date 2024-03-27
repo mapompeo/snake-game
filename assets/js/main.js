@@ -71,7 +71,6 @@ function startHTML() {
 // Conjunto de funções para funcionar a parte principal do jogo
 function play() {
     snake.restartSnake()
-
     startMaster[0].style.display = "none"
 
     document.addEventListener('keydown', (click) => {
@@ -124,9 +123,6 @@ function play() {
         // Um loop lendo cada valor do array e desenhando individualmente o tamanho da cobrinha
         positionX = snake.x
         positionY = snake.y
-        // for(i = snakeTail.length - 1; i >= 0; i--){
-        //     snakeTail[i].drawBody()
-        // }
     }
 
     function refresh(){
