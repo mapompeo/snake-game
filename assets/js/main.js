@@ -201,6 +201,8 @@ function stopGame() {
     apple.respawnApple()
 }
 
+
+
 // CARD FUNCTIONS
 function definitions() {
     startMaster[0].style.display = "none";
@@ -230,12 +232,12 @@ function closePlayAgain() {
 // END CARD FUNCTIONS
 
 
+
+// RECORD
 let recordPointsLoaded = null
 window.onload = function(){
-    
     recordPointsLoaded = localStorage.getItem('recordPointsStorage') || 0
-    
     personalRecord.innerHTML = `RECORDE: ${recordPointsLoaded}`
-
     console.log(`Pontuação carregada: ${recordPointsLoaded}`)
 }
+// END RECORD

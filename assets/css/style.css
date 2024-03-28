@@ -1,5 +1,4 @@
 /* GLOBAL */
-
 :root {
     /* Color */
     --dark: rgb(51, 51, 51);
@@ -41,13 +40,10 @@ body {
     color: var(--dark);
     padding: 24px;
 }
-
 /* END GLOBAL */
 
 
-
 /* SCREEN */
-
 .screen {
     display: flex;
     flex-direction: column;
@@ -85,13 +81,10 @@ canvas {
     border-radius: 8px;
     opacity: 1;
 }
-
 /* END SCREEN */
 
 
-
 /* CARD MENU */
-
 .cardMaster {
     position: absolute;
     top: 50%;
@@ -173,13 +166,10 @@ canvas {
     font-weight: bold;
     margin: 24px 0px;
 }
-
 /* END CARD MENU */
 
 
-
 /* MENU PLAY AGAIN */
-
 .divButton {
     width: 280px;
     height: 70px;
@@ -211,13 +201,10 @@ canvas {
 .buttonClose:hover {
     cursor: pointer;
 }
-
 /* END MENU PLAY AGAIN */
 
 
-
 /* CREDITS */
-
 .credits {
     display: flex;
     justify-content: flex-end
@@ -302,13 +289,10 @@ canvas {
 .text-copyright-credits {
     margin-left: 18px;
 }
-
 /* END CREDITS */
 
 
-
 /* DEFINITIONS */
-
 .definitions {
     display: flex;
     justify-content: flex-end;
@@ -367,13 +351,10 @@ input[type='range']::-webkit-slider-thumb {
     width: 260px;
     margin: 24px 0px;
 }
-
 /* END DEFINITIONS */
 
 
-
 /* RESPONSIVE */
-
 @media screen and (max-width: 1150px) {
     body {
         transform: scale(0.7);
@@ -409,7 +390,6 @@ input[type='range']::-webkit-slider-thumb {
         transform: scale(0.2);
     }
 }
-
 /* END RESPONSIVE */
 
 .startMaster, .playAgainMaster, .creditsMaster, .definitionsMaster {
