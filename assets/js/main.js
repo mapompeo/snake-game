@@ -73,6 +73,7 @@ function play() {
     snake.restartSnake()
     startMaster[0].style.display = "none"
 
+    // 
     document.addEventListener('keydown', (click) => {
         if (click.key === 'a' || click.key === 'A' || click.key === 'ArrowLeft') {
             direction = 'left'
@@ -102,29 +103,20 @@ function play() {
         const dx = touchEndX - touchStartX;
         const dy = touchEndY - touchStartY;
 
-        // Determina a direção do swipe
         if (Math.abs(dx) > Math.abs(dy)) {
-            // Movimento horizontal
             if (dx > 0) {
-                // Swipe para a direita
                 direction = 'right';
             } else {
-                // Swipe para a esquerda
                 direction = 'left';
             }
         } else {
-            // Movimento vertical
             if (dy > 0) {
-                // Swipe para baixo
                 direction = 'down';
             } else {
-                // Swipe para cima
                 direction = 'up';
             }
         }
     });
-
-
 
     // Código para o funcionamento do cronômetro
     function updateTime() {

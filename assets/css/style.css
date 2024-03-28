@@ -370,3 +370,19 @@ input[type='range']::-webkit-slider-thumb {
 .startMaster, .playAgainMaster, .creditsMaster, .definitionsMaster {
     display: none;
 }
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 400px) and (max-width: 900px) {
+    body {
+        transform: scale(0.1);
+        transform-origin: 0 0;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* END RESPONSIVE */
