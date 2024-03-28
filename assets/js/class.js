@@ -125,6 +125,13 @@ class Head extends Obj {
     }
 
     killSnake(){
+        if(points > recordPointsLoaded){
+            recordPointsLoaded = points
+            console.log('Seu recorde agora é de '+ recordPointsLoaded)
+            console.log(points)
+            localStorage.setItem('recordPointsStorage', points)
+            // Aqui vc coloca o innerHTML do recorde, puxando a variavel recordPointsLoaded
+        }
         snakeAlive = false
         playAgainMaster[0].style.display = "block";
         loseAudio.play()

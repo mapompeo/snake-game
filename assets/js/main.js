@@ -206,3 +206,10 @@ function closePlayAgain() {
 // END CARD FUNCTIONS
 
 
+let recordPointsLoaded = null
+window.onload = function(){
+    
+    recordPointsLoaded = localStorage.getItem('recordPointsStorage') || 0
+
+    console.log(`Pontuação carregada: ${recordPointsLoaded}`)
+}
