@@ -374,18 +374,35 @@ input[type='range']::-webkit-slider-thumb {
 
 /* RESPONSIVE */
 
-@media screen and (max-width: 932px) and (min-width: 430px) {
+@media screen and (max-width: 1150px) {
+    body {
+        transform: scale(0.7);
+    }
+}
+
+@media screen and (max-width: 950px) {
     body {
         transform: scale(0.6);
     }
 }
 
-@media screen and (max-width: 540px) and (min-width: 300px) {
+@media screen and (max-width: 600px) {
     body {
-        transform: scale(0.1);
+        transform: scale(0.5);
     }
 }
 
+@media screen and (max-width: 450px) {
+    body {
+        transform: scale(0.4);
+    }
+}
+
+@media screen and (max-width: 370px) {
+    body {
+        transform: scale(0.3);
+    }
+}
 /* END RESPONSIVE */
 
 .startMaster, .playAgainMaster, .creditsMaster, .definitionsMaster {
