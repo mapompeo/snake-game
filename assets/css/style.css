@@ -386,23 +386,30 @@ input[type='range']::-webkit-slider-thumb {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
     body {
         transform: scale(0.5);
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
     body {
         transform: scale(0.4);
     }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 450px) {
     body {
         transform: scale(0.3);
     }
 }
+
+@media screen and (max-width: 370px) {
+    body {
+        transform: scale(0.2);
+    }
+}
+
 /* END RESPONSIVE */
 
 .startMaster, .playAgainMaster, .creditsMaster, .definitionsMaster {
