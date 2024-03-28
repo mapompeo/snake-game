@@ -10,6 +10,7 @@ let snakeAlive = true
 let apple = new Apple(600, 300, 30, 30, '../assets/images/apple.svg', )
 let points = 0
 let snakePoints = document.getElementById('snakePoints')
+let personalRecord = document.getElementById('personalRecord')
 let gameInterval
 
 // CARDS
@@ -210,6 +211,8 @@ let recordPointsLoaded = null
 window.onload = function(){
     
     recordPointsLoaded = localStorage.getItem('recordPointsStorage') || 0
+    
+    personalRecord.innerHTML = `RECORDE: ${recordPointsLoaded}`
 
     console.log(`Pontuação carregada: ${recordPointsLoaded}`)
 }

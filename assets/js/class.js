@@ -130,6 +130,7 @@ class Head extends Obj {
             console.log('Seu recorde agora é de '+ recordPointsLoaded)
             console.log(points)
             localStorage.setItem('recordPointsStorage', points)
+            personalRecord.innerHTML = `RECORDE: ${recordPointsLoaded}`
             // Aqui vc coloca o innerHTML do recorde, puxando a variavel recordPointsLoaded
         }
         snakeAlive = false
