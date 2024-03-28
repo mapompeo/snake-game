@@ -380,12 +380,12 @@ input[type='range']::-webkit-slider-thumb {
     main {
         transform: scale(50%);
         transform-origin: 0 0;
-        
+        width: 50vw; /* Largura ajustada */
+        margin: 0 auto; /* Centralizar horizontalmente */
     }
 
     body {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
