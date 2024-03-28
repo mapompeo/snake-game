@@ -41,9 +41,20 @@ const volumeElement = document.getElementById("rangeVolume");
 menuTheme.loop = true
 playingAudio.loop = true
 
+// USER ORIENTATION
+const portraitElementMaster = document.getElementsByClassName("portraitElementMaster");
 
-// Código para funcionar o range input dos sons
+
 document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerHeight > window.innerWidth) {
+        startMasterDOM[0].style.display = "none"
+        portraitElementMaster[0].style.display = "block"
+    } else {
+        startMasterDOM[0].style.display = "block"
+        portraitElementMaster[0].style.display = "none"
+    }
+
+    // Código para funcionar o range input dos sons
     function updateSoundEffects(element) {
         const volume = element.value / 100 // Normaliza o valor entre 0 e 1
         bitingAppleAudio.volume = volume
@@ -60,13 +71,17 @@ document.addEventListener('DOMContentLoaded', function() {
     volumeElement.addEventListener("change", () => updateVolume(volumeElement));
 })
 
+// Função para recarregar a página
+function reload() {
+    location.reload();
+}
 
 // função para começar a funcionar os áudios e ir para o card principal do menu
 function startHTML() {
     menuTheme.play()
-    startMasterDOM[0].style.display = "none"
+    portraitElementMaster[0].style.display = "none"
     startMaster[0].style.display = "block"
-    direction = 'right'
+    startMasterDOM[0].style.display = "none"
 }
 
 // Conjunto de funções para funcionar a parte principal do jogo
