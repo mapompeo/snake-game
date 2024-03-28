@@ -14,34 +14,29 @@ Clique na imagem abaixo para visualizar!
 ## Jornada de criação:
 
 ### Introdução:
-Criar o clássico jogo da cobrinha no front-end é como ser um mestre de pixels. Para criar este jogo, utilizamos apenas o trio do front-end: HTML, CSS e JavaScript para dar vida a esse desafio retrô. Imaginamos a tela como um pergaminho mágico e use CSS para deixá-la incrível. Depois, colocamos uma forma à cobra com JavaScript, controlando-a para devorar maçãs pixeladas. Aumentamos a dificuldade com obstáculos e sons, e finalizamos com telas de início e fim. Veja também como foi o processo de criação do jogo acessando o projeto do Figma:
-http://gg.gg/figma-jkm
+JKM é basicamente o clássico jogo da cobrinha feito por estudantes de Desenvolvimento de Sistemas no SENAI. Demos inicio ao projeto no dia 01/03/2024 e foi apresentado para os professores dia 04/04/2024.
+
 
 ### Organização do projeto:
-O método "Scrum" foi utilizado para gerenciar o desenvolvimento do jogo, proporcionando organização, comunicação e entrega eficiente do projeto. Através de sprints curtos e entregas frequentes, a equipe pôde trabalhar de forma colaborativa e se adaptar a mudanças e prioridades. A metodologia contribuiu para o sucesso do projeto, apesar de alguns desafios como a estimativa de tempo e a comunicação clara. Recomenda-se treinamento da equipe, uso de ferramentas de suporte e adaptação da metodologia às necessidades do projeto.
+O método "Scrum" foi utilizado para gerenciar o desenvolvimento do jogo, proporcionando organização, comunicação e entrega eficiente do projeto. Projetamos o funcionamento do jogo utilizando o draw.io para criar uma classe de diagrama, tal qual foi utilizada posteriormente para produzir o jogo. Também foi utilizado a ferramenta Figma para projetar o design do jogo, aqui você pode ver o nosso projeto: http://gg.gg/figma-jkm
 
-## Tecnologias utilizadas:
-### Tecnologias para dar vida à Cobra Pixelada:
-- HTML: A base da estrutura do jogo, definindo a tela e elementos como título, instruções e pontuação.
-- CSS: Responsável pela estética do jogo, estilizando cores, fontes, animações e layout da tela.
-- JavaScript: O motor do jogo, controlando a lógica, movimento da cobra, colisões, geração de maçãs e obstáculos.
-- Canvas: Uma área específica dentro da página HTML, utilizada para desenhar a cobra e os demais elementos do jogo com JavaScript.
-- Orientação a Objetos: Uma técnica de programação que organiza o código em objetos com características e comportamentos específicos, facilitando a reutilização e manutenção do código.
 
-### Tecnologias Opcionais:
-- Web Audio API: Permite adicionar sons e efeitos sonoros ao jogo, criando uma experiência mais envolvente.
-- Bibliotecas JavaScript: Diversas bibliotecas podem ser utilizadas para facilitar o desenvolvimento do jogo, como bibliotecas para animações e sons.
+## Funcionamento do jogo:
+- **Desenhar a cobra na tela**: É utilizado a API Canvas para desenhar os gráficos na tela. Para desenhar a cobrinha, é criado um objeto "snake" da classe "Head", onde é definido tamanho, cordenada e cor, e depois, a função fillRect().
+- **Geração da maçã**: Assim como a cobrinha, é criado um objeto "apple" da classe "Apple" com suas predefinições, porém, é necessário gerar um valor aleatório para as cordendas dela, então, o método math random é chamado, junto com um "do while" que verifica se a cordenada gerada se encaixa corretamente nos quadradinhos do fundo.
+- **Colisão com a maçã**: A cada instante, é verificado a colisão da cabeça da cobrinha com a maçã, analisando cordenada e tamanho de ambos. Se caso a função colisão retornar um valor true, o jogador ganha um ponto, e a maçã é gerada novamente em um lugar aleatório.
+- **Criação do corpo**: Ao colidir com a maçã, é feito um push no array do corpo da cobrinha. Um novo objeto da classe Body é criada, onde a cada atualização o primeiro objeto sempre segue a cabeça, e as demais partes do corpo sempre seguem a parte do corpo anterior.
+- **Colisão com o própio corpo**: Assim como a colisão com a maçã, a cada instante é verificado a colisão da cabeça da cobrinha com cada parte do corpo, verificado individualmente.
 
-## Como jogar:
-Assuma o controle da cobra pixelada neste clássico jogo e guie-a por uma aventura desafiadora. Utilize as setas do teclado ou wasd para controlar seus movimentos, coletando maçãs para aumentar seu tamanho e evitando colisões com o próprio corpo ou obstáculos. Aumente a velocidade ao decorrer do jogo para testar seus reflexos. Encare o desafio de bater seu próprio recorde. Mergulhe na nostalgia com sons vibrantes e gráficos retrô, desfrutando de uma experiência divertida e viciante.
 
-## SQUAD:
+## Equipe:
 - (Developer) José Gabriel ([@naasdd](https://github.com/naasdd))
 - (Developer) Kauã Biasebetti ([@kauuaa](https://github.com/kauuaa))
 - (Scrum Master & Developer) Matheus Pompeo ([@mapompeo](https://github.com/mapompeo))
 
 ## Considerações finais:
-O projeto JKM Snake Game resultou em um jogo completo e funcional, utilizando HTML, CSS e JavaScript. Diversas funcionalidades foram implementadas para aumentar o desafio e a diversão. O desenvolvimento proporcionou aprendizados valiosos sobre lógica de programação, orientação a objetos e principalmente resolução de problemas. O jogo está publicado online e disponível para qualquer pessoa jogar e acessar atráves do link: https://jkm-snake.netlify.app. Gostaríamos de agradecer ao Professor Carlos Roberto ([@Prof-Carlos-Senai](https://github.com/Prof-Carlos-Senai)) por sua orientação, suporte e incentivo durante o desenvolvimento do projeto. Sua disponibilidade foi fundamental para o sucesso do projeto.
+Nossa equipe gostaria de agradecer ao ao Professor Carlos Roberto ([@Prof-Carlos-Senai](https://github.com/Prof-Carlos-Senai)) por nos ajudar a desenvolver um projeto tão divertido e de muito aprendizado, a projeção desse jogo foi importante para entendermos o funcionamento real de trabalho colaborativo no mercado de trabalho.
+
 
 ## Licença:
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais informações.
