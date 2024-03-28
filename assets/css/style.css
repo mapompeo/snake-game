@@ -30,6 +30,8 @@
 body {
     transition: all 0.2s;
     background-color: var(--dark);
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,6 +39,7 @@ body {
     overflow: hidden;
     font-size: var(--fontSize-Normal);
     color: var(--dark);
+    padding: 24px;
 }
 
 /* END GLOBAL */
@@ -373,15 +376,19 @@ input[type='range']::-webkit-slider-thumb {
 
 
 /* RESPONSIVE */
-@media screen and (min-width: 400px) and (max-width: 900px) {
-    body {
-        transform: scale(0.1);
+@media screen and (min-width: 0px) and (max-width: 900px) {
+    main {
+        transform: scale(50%);
         transform-origin: 0 0;
+        
+    }
 
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
 }
 
