@@ -370,26 +370,24 @@ input[type='range']::-webkit-slider-thumb {
 
 /* END DEFINITIONS */
 
-.startMaster, .playAgainMaster, .creditsMaster, .definitionsMaster {
-    display: none;
-}
 
 
 /* RESPONSIVE */
-@media screen and (min-width: 0px) and (max-width: 900px) {
-    main {
-        transform: scale(50%);
-        transform-origin: 0 0;
-        width: 50vw; /* Largura ajustada */
-        margin: 0 auto; /* Centralizar horizontalmente */
-    }
 
+@media screen and (max-width: 932px) and (min-width: 430px) {
     body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+        transform: scale(0.6);
+    }
+}
+
+@media screen and (max-width: 540px) and (min-width: 300px) {
+    body {
+        transform: scale(0.1);
     }
 }
 
 /* END RESPONSIVE */
+
+.startMaster, .playAgainMaster, .creditsMaster, .definitionsMaster {
+    display: none;
+}
