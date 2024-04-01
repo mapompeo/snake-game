@@ -21,6 +21,7 @@ let creditsMaster = document.getElementsByClassName('creditsMaster')
 let definitionsMaster = document.getElementsByClassName('definitionsMaster')
 let snakePointsDead = document.getElementById('snakePointsDead')
 let gameTimeDead = document.getElementById('gameTimeDead')
+let swipeMaster = document.getElementsByClassName('swipeMaster')
 
 // TIMER
 let gameTime = document.getElementById('gameTime')
@@ -45,14 +46,29 @@ playingAudio.loop = true
 const portraitElementMaster = document.getElementsByClassName("portraitElementMaster");
 
 
+function isMobile() {
+    return navigator.userAgent.match(/Android|iPhone|iPad/i);
+}
+
+  
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Código para aparecer os cards no modo dispositivo móvel
+    if (isMobile()) {
+        swipeMaster[0].style.display = "block"
+        startMasterDOM[0].style.display = "none"
+    }
+    
     if (window.innerHeight > window.innerWidth) {
         startMasterDOM[0].style.display = "none"
+        swipeMaster[0].style.display = "none"
         portraitElementMaster[0].style.display = "block"
     } else {
         startMasterDOM[0].style.display = "block"
         portraitElementMaster[0].style.display = "none"
     }
+
+
 
     // Código para funcionar o range input dos sons
     function updateSoundEffects(element) {
@@ -244,6 +260,12 @@ function closePlayAgain() {
     playAgainMaster[0].style.display = "none";
     startMaster[0].style.display = "block";
 }
+
+function closeSwipe() {
+    startMaster[0].style.display = "none"
+    swipeMaster[0].style.display = "none";  
+    startMasterDOM[0].style.display = "block";
+}
 // END CARD FUNCTIONS
 
 
@@ -253,6 +275,5 @@ let recordPointsLoaded = null
 window.onload = function(){
     recordPointsLoaded = localStorage.getItem('recordPointsStorage') || 0
     personalRecord.innerHTML = `RECORDE: ${recordPointsLoaded}`
-    console.log(`Pontuação carregada: ${recordPointsLoaded}`)
 }
 // END RECORD

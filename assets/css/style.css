@@ -223,7 +223,7 @@ canvas {
     margin-bottom: 40px;
 }
 
-.buttonClose {
+.buttonClose, .buttonCloseSwipe {
     z-index: 3;
     transition: all 0.2s;
     border: none;
@@ -231,10 +231,10 @@ canvas {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(220%, -330%);
+    transform: translate(220%, -360%);
 }
 
-.buttonClose:hover {
+.buttonClose:hover, .buttonCloseSwipe:hover {
     cursor: pointer;
 }
 /* END MENU PLAY AGAIN */
@@ -515,6 +515,39 @@ input[type='range']::-webkit-slider-thumb {
 /* END RESPONSIVE */
 
 
-.startMaster, .playAgainMaster, .creditsMaster, .definitionsMaster {
+.startMaster, .playAgainMaster, .creditsMaster, .definitionsMaster, .swipeMaster {
     display: none;
 }
+
+.swipe {
+    height: 180px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-size: var(--fontSize-SubTittle);
+
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    font-weight: var(--fontWeight-Bold);
+    height: 200px;
+    padding: 24px;
+    z-index: 1;
+}
+
+.swipeMaster {
+    
+    z-index: 2;
+}
+
+.swipe img {
+    width: 64px;
+    margin-top: 16px;
+}
+
+.buttonCloseSwipe {
+    top: 50%;
+    left: 50%;
+    transform: translate(270%, -230%);
+}
+
