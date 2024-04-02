@@ -4,7 +4,7 @@
 
 Clique na imagem abaixo para visualizar!
 
-<a href="https://jkm-snake.netlify.app/"><img src="./assets/images/mockup-jkm-snake.png" height="auto" width="auto"></a>
+<a href="https://jkm-snake.netlify.app/"><img src="./assets/images/mockup-jkm-snake.pg" height="auto" width="auto"></a>
 
 </div>
 
