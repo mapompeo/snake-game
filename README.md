@@ -35,7 +35,7 @@ O método "Scrum" foi utilizado para gerenciar o desenvolvimento do jogo, propor
 - (Scrum Master & Developer) Matheus Pompeo ([@mapompeo](https://github.com/mapompeo))
 
 ## Considerações finais:
-Nossa equipe gostaria de agradecer ao ao Professor Carlos Roberto ([@Prof-Carlos-Senai](https://github.com/Prof-Carlos-Senai)) por nos ajudar a desenvolver um projeto tão divertido e de muito aprendizado, a projeção desse jogo foi importante para entendermos o funcionamento real de trabalho colaborativo no mercado de trabalho.
+Nossa equipe gostaria de agradecer ao Professor Carlos Roberto ([@Prof-Carlos-Senai](https://github.com/Prof-Carlos-Senai)) por nos ajudar a desenvolver um projeto tão divertido e de muito aprendizado, a projeção desse jogo foi importante para entendermos o funcionamento real de trabalho colaborativo no mercado de trabalho.
 
 
 ## Licença:
