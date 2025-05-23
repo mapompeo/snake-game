@@ -7,7 +7,7 @@ let snakeTail = []
 let snakeAlive = true
 
 // ITEMS
-let apple = new Apple(600, 300, 30, 30, '../assets/images/apple.svg', )
+let apple = new Apple(600, 300, 30, 30, '../assets/images/apple.svg',)
 let points = 0
 let snakePoints = document.getElementById('snakePoints')
 let personalRecord = document.getElementById('personalRecord')
@@ -42,6 +42,12 @@ const volumeElement = document.getElementById("rangeVolume");
 menuTheme.loop = true
 playingAudio.loop = true
 
+bitingAppleAudio.volume = 0.1
+loseAudio.volume = 0.1
+playingAudio.volume = 0.1
+startAudio.volume = 0.1
+menuTheme.volume = 0.1
+
 // USER ORIENTATION
 const portraitElementMaster = document.getElementsByClassName("portraitElementMaster");
 
@@ -50,15 +56,15 @@ function isMobile() {
     return navigator.userAgent.match(/Android|iPhone|iPad/i);
 }
 
-  
 
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function () {
     // Código para aparecer os cards no modo dispositivo móvel
     if (isMobile()) {
         swipeMaster[0].style.display = "block"
         startMasterDOM[0].style.display = "none"
     }
-    
+
     if (window.innerHeight > window.innerWidth) {
         startMasterDOM[0].style.display = "none"
         swipeMaster[0].style.display = "none"
@@ -74,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateSoundEffects(element) {
         const volume = element.value / 100 // Normaliza o valor entre 0 e 1
         bitingAppleAudio.volume = volume
-        loseAudio. volume = volume
+        loseAudio.volume = volume
         startAudio.volume = volume
     }
 
@@ -123,12 +129,12 @@ function play() {
 
     // Eventos de toque
     let touchStartX, touchStartY;
-    document.addEventListener('touchstart', function(event) {
+    document.addEventListener('touchstart', function (event) {
         touchStartX = event.touches[0].clientX;
         touchStartY = event.touches[0].clientY;
     });
 
-    document.addEventListener('touchmove', function(event) {
+    document.addEventListener('touchmove', function (event) {
         const touchEndX = event.touches[0].clientX;
         const touchEndY = event.touches[0].clientY;
 
@@ -164,10 +170,10 @@ function play() {
             }, 1000)
         }
     }
- 
-    function checkColision(){
-        for(i = snakeTail.length -1; i >= 0; i--){
-            if(snake.colision(snakeTail[i])){
+
+    function checkColision() {
+        for (i = snakeTail.length - 1; i >= 0; i--) {
+            if (snake.colision(snakeTail[i])) {
                 snake.killSnake()
             }
         }
@@ -179,7 +185,7 @@ function play() {
         }
     }
 
-    function draw(){
+    function draw() {
         snake.drawHead()
         apple.drawApple()
         // Um loop lendo cada valor do array e desenhando individualmente o tamanho da cobrinha
@@ -187,16 +193,16 @@ function play() {
         positionY = snake.y
     }
 
-    function refresh(){
+    function refresh() {
         snake.refreshHead()
         // Esse algoritmo serve para desenhar a cauda da cobra com base no elemento anterior
-        for (i = snakeTail.length -1; i >= 0; i--){
+        for (i = snakeTail.length - 1; i >= 0; i--) {
             if (i === 0) {
                 snakeTail[i].x = positionX
                 snakeTail[i].y = positionY
             } else {
-                snakeTail[i].x = snakeTail[i-1].x
-                snakeTail[i].y = snakeTail[i-1].y
+                snakeTail[i].x = snakeTail[i - 1].x
+                snakeTail[i].y = snakeTail[i - 1].y
             }
             snakeTail[i].drawBody()
         }
@@ -204,14 +210,14 @@ function play() {
         updateTime()
     }
 
-    function main(){
+    function main() {
         if (snakeAlive) {
-            des.clearRect(0, 0, 810, 510) 
-            refresh()   
+            des.clearRect(0, 0, 810, 510)
+            refresh()
             draw()
         }
     }
-    
+
     // Função parar cancelar o intervalo de jogo existente caso houver
     if (gameInterval) {
         clearInterval(gameInterval)
@@ -245,7 +251,7 @@ function credits() {
     creditsMaster[0].style.display = "block";
 }
 
-function closeDefinitions() {   
+function closeDefinitions() {
     definitionsMaster[0].style.display = "none";
     startMaster[0].style.display = "block";
 }
@@ -263,7 +269,7 @@ function closePlayAgain() {
 
 function closeSwipe() {
     startMaster[0].style.display = "none"
-    swipeMaster[0].style.display = "none";  
+    swipeMaster[0].style.display = "none";
     startMasterDOM[0].style.display = "block";
 }
 // END CARD FUNCTIONS
@@ -272,7 +278,7 @@ function closeSwipe() {
 
 // RECORD
 let recordPointsLoaded = null
-window.onload = function(){
+window.onload = function () {
     recordPointsLoaded = localStorage.getItem('recordPointsStorage') || 0
     personalRecord.innerHTML = `RECORDE: ${recordPointsLoaded}`
 }
